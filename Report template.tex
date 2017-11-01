@@ -174,7 +174,8 @@ The game played on $Q$ as below with $m=3$ and $T=7$
   \node[main node,fill=blue!30] (7) at (7) {$7$};
   \path[->,color=blue] (7) edge (3);
   
-  \node[main node,fill=red!30] (8) at (8) {$8$}; 
+  \node[main node,fill=red!30] (8) at (8) {$8$};
+  \node[color=red] (Attacktimelabel) [shift={(3,0)}] at (8) {Attack Starting, $t_{A}=1$};
     }
 %Slide 5
   \visible<5>{
@@ -182,7 +183,8 @@ The game played on $Q$ as below with $m=3$ and $T=7$
   \node[main node,fill=blue!30] (3) at (3) {$3$};
   \node[color=blue] (WaitingLabel) [shift={(0,0.7)}] at (3) {Wait};
   
-  \node[main node,fill=red!30] (8) at (8) {$8$}; 
+  \node[main node,fill=red!30] (8) at (8) {$8$};
+  \node[color=red] (Attacktimelabel) [shift={(1.5,0)}] at (8) {$t_{A}=2$}; 
     }
 %Slide 6
   \visible<6>{
@@ -191,12 +193,15 @@ The game played on $Q$ as below with $m=3$ and $T=7$
   \path[->,color=blue] (3) edge (4);
   
   \node[main node,fill=red!30] (8) at (8) {$8$};  
+  \node[color=red] (Attacktimelabel) [shift={(1.5,0)}] at (8) {$t_{A}=3$};
     }
 %Slide 7
   \visible<7>{
   \node (TimeLabel) [shift={(1,1)}] at (1) {$t=5$};
   \node[main node,fill=blue!30] (4) at (4) {$4$};
   \path[->,color=blue] (4) edge (8); 
+  
+  \node[color=red] (Attacktimelabel) [shift={(2,0)}] at (8) {Attacker Done};
     }    
 %Slide 8
   \visible<8>{

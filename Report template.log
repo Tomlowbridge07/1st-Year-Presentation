@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.6.5)  20 OCT 2017 18:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.6.5)  1 NOV 2017 18:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1720,12 +1720,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@snm=\write9
 \openout9 = `"Report template.snm"'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 282.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 282.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 287.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 287.
 
 (./Report template.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 282.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 282.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 287.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 287.
 Package rerunfilecheck Info: File `"Report template".out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1735,10 +1735,10 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 31557 strings out of 492995
- 629880 string characters out of 6132690
- 702880 words of memory out of 5000000
- 34490 multiletter control sequences out of 15000+600000
+ 31563 strings out of 492995
+ 630032 string characters out of 6132690
+ 708037 words of memory out of 5000000
+ 34496 multiletter control sequences out of 15000+600000
  18580 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,21n,106p,10468b,861s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1761,7 +1761,7 @@ aths/linuxlocal/AMD64/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 ssi10.pfb></maths/linuxlocal/AMD64/texlive/2017/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy10.pfb></maths/linuxlocal/AMD64/texlive/2017/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmsy8.pfb>
-Output written on "Report template.pdf" (17 pages, 189462 bytes).
+Output written on "Report template.pdf" (17 pages, 191126 bytes).
 PDF statistics:
  193 PDF objects out of 1000 (max. 8388607)
  142 compressed objects within 2 object streams
