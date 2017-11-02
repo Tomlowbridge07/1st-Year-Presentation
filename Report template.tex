@@ -43,8 +43,8 @@
 \usepackage{natbib}
 \usepackage{appendix}
 \usepackage[utf8]{inputenc}
-\usepackage{floatrow}
-\usepackage{newfloat}
+%\usepackage{floatrow}
+%\usepackage{newfloat}
 \usepackage{subcaption}
 \usepackage{bm}
 
@@ -59,14 +59,15 @@
 \newcommand{\halflength}{\ensuremath{\floor{\frac{m}{2}}}}
 \newcommand{\floor}[1]{\left \lfloor #1 \right \rfloor}
 \newcommand{\ceil}[1]{\left \lceil #1 \right \rceil}
+\newcommand{\set}[2]{\left\{ #1 \, | \, #2 \right\}}
 
 \newcommand{\oneline}[1]{\resizebox{\dimexpr\paperwidth - 3ex}{!}{#1}}
 
-\DeclareFloatingEnvironment[fileext=los,
-    listname={List of Example Figures},
-    name=Example Figure,
-    placement=tbhp,
-    within=section,]{examplefigure}
+%\DeclareFloatingEnvironment[fileext=los,
+ %   listname={List of Example Figures},
+  %  name=Example Figure,
+   % placement=tbhp,
+    %within=section,]{examplefigure}
 
 \author{Thomas Lowbridge}
 \title{Patrolling Games}
@@ -85,6 +86,31 @@
 %\begin{frame}
 %\tableofcontents
 %\end{frame}
+
+\begin{frame}{Outline}
+
+\begin{itemize}
+\item Literature review
+ \begin{itemize}
+ \item Introduction to Game
+  \begin{itemize}
+  \item Pure Game
+  \item Mixed Game
+  \end{itemize}
+ \item Solved Graphs
+  \begin{itemize}
+  \item Hamiltonian graphs
+  \item Complete bipartite graph
+  \item Star graph
+  \item Line graph
+  \end{itemize}   
+ \end{itemize}
+\item Correction of line graph strategy
+\item Extension of line graph strategy
+\item Introduction to the elongated star
+\item Future Work
+\end{itemize}
+\end{frame}
 
 \begin{frame}{Introduction to Patrolling Games}
 A Patrolling game, $G=G(Q,T,m)$ is made of 3 major components
@@ -249,21 +275,18 @@ We do this by searching for the games value, $$V(G) \equiv \max\limits_{\bm{\pi}
 This is done by achieving both upper and lower bounds on the value of the game.
 \end{frame}
 
-\begin{frame}{Solved graphs:Hamiltonian}
+\begin{frame}{Solved graphs:Hamiltonian, Complete Bipartite and Star}
 
 \begin{block}{Hamiltonian graphs}
 A Hamiltonian graph has the value $V=\frac{m}{n}$
 \end{block}
 
-\end{frame}
-
-\begin{frame}{Solved graphs:Bipartite}
 \begin{block}{Bipartite graph}
-A bipartite graph with no-adjacency partition into sets $A$ and $B$ has the value $V=\frac{m}{2(\max(|A|,|B|))}$
+A complete bipartite graph, $K_{a,b}$ as value
+$$V=\frac{m}{2 \max (a,b)}$$
 \end{block}
-\end{frame}
 
-\begin{frame}{Solved graphs:Star}
+
 \begin{block}{Star graph}
 The star $S_{n} \equiv K_{1,n}$ so has the value $V=\frac{m}{2n}$
 \end{block}
@@ -282,6 +305,135 @@ The line graph, $L_{n}$ made of $n$ nodes has a value dependent on $(n,m)$
 \end{block}
 \end{frame}
 
+\begin{frame}{Correction to Line graph}
 
+It was initially state that in the region two $n-1 \leq m \leq 2(n-1)$, the value $\frac{m}{2(n-1)}$ is achieved by the attacker attacking using the \textcolor{red}{diametric strategy}, which is to attack at opposite ends of the line with equal probability for all possible starting times. This is supposed to guarantee that $V \leq \frac{m}{2(n-1)}$.
+\newline
+\newline
+\textbf{Example.}
+Consider $L_{5}$ with $T=m=5$ , then the patroller only needs to walk between the end nodes to win.
+\begin{center}
+\begin{tikzpicture}[-,auto,node distance=1.5cm,
+                    thick,main node/.style={circle,fill=white,draw,font=\sffamily\Large\bfseries}]
+
+  \node[main node,fill=red!30] (1) {$1$};
+  \node[main node] (2) [right of=1] {$2$};
+  \node[main node] (3) [right of=2]  {$3$};
+  \node[main node] (4) [right of=3]  {$4$};
+  \node[main node,fill=red!30] (5) [right of=4] {$5$};
+
+  \path[every node/.style={font=\sffamily}]
+    (1) edge (2)
+    (2) edge (3)
+    (3) edge (4)
+    (4) edge (5)
+    ;
+\end{tikzpicture}
+\end{center}
+The walk $\{ 1,2,3,4,5 \}$ guarantee's the capture of all attacks made.
+
+\end{frame}
+
+\begin{frame}{Limiting result}
+\textbf{Example.}
+Consider $L_{31}$ with $m=45$
+
+\begin{figure}
+\includegraphics[scale=0.4]{DiametricAttack(m_45,d_30).png}
+\caption{Best Upper Bound achievable under the diametric strategy}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Limiting result}
+
+\begin{lemma}[Condition on $T$ for bound to hold]
+When $T=m-1+(k+1)(n-1)$ for some $k \in \mathbb{N}_{0}$ then the diametric bound holds. Otherwise as $T \rightarrow \infty$ then the diametric bound ($V \leq \frac{m}{2(n-1)}$) holds.
+\end{lemma}
+
+\end{frame}
+
+\begin{frame}{Solution to diametric bound line problem}
+We propose a solution to the problem, by limiting the time
+
+\begin{definition}[Time limited diametric attack]
+When $T \geq m+n-2$ we have the \textit{time limited diametric attack} (on the line) strategy is for the attacker to attack at both ends of the line with equal probability for starting times $0,1,...,n-2$
+\end{definition}
+
+This restriction to the attacking time guarantees to get the sought upper bound of $V \leq \frac{m}{2(n-1)}$. 
+
+This works due to the spacing of the attack times.
+\end{frame}
+
+\begin{frame}{General time limited diametric attack}
+
+Let $\bar{d}$ be the diameter of the graph, i.e the distance between the furthest apart nodes then using
+
+\begin{definition}[Time limited diametric attack]
+When $T \geq m-1+\bar{d}$ we have the \textit{time limited diametric attack} strategy is for the attacker to attack at both ends of the line with equal probability for starting times $\tau,\tau +1,...,\tau + \bar{d}-1$ (for a chosen initial $\tau$).
+\end{definition}
+
+\begin{lemma}[Time limited diametric bound]
+When $T \geq m-1 +\bar{d}$ the attacker can get the bound
+$$V \leq \dfrac{m}{2\bar{d}}.$$
+\end{lemma}
+
+\end{frame}
+
+
+\begin{frame}{Polygonal attack}
+Using $d(i,j)$ as the distance between nodes $i$ and $j$ we can get a more general type of attack.
+
+\begin{definition}[Polygonal attack]
+A \textit{$d$-polygonal attack} is an attack at a set of nodes $D= \set{i \in N}{ d(i,i')=d}$ at the time intervals $\tau,\tau+1,...,\tau+d-1$ (for a chosen initial $\tau$) all equally probable.
+\end{definition}
+
+\begin{lemma}[Polygonal bound]
+When $T \geq m+d-1$ and a set $D$ as in the $d$-polygonal attack, the bound $V \leq \max \{ \frac{1}{|D|} , \frac{m}{|D|d} \}$ is valid.
+\end{lemma}
+
+\end{frame}
+
+\begin{frame}{Mixing Lines and stars}
+We now wish to integrate features of a star into a line.
+We will form the elongated star $S_{n}^{k}$. We will use the labelling as below
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[-,auto,node distance=1.5cm,
+                    thick,main node/.style={circle,draw,font=\sffamily\Large\bfseries}]
+
+  \node[main node] (1) {$1$};
+  \node[main node] (2) [right of=1] {$2$};
+  \node[main node] (3) [right of=2] {$3$};
+  \node[main node] (4) [right of=3] {$4$};
+  \node[main node] (5) [right of=4] {$5$};
+  \node[main node] (6) [right of=5]  {$6$};
+  \node[main node] (7) [right of=6]  {$c$};
+  \node[main node] (8) [right of=7]  {$*$};
+  \node[main node] (9) [above of=7]  {$*$};
+  \node[main node] (10) [below of=7]  {$*$};
+  
+
+  \path[every node/.style={font=\sffamily}]
+    (1) edge  (2)
+    (2) edge (3)
+    (3) edge (4)
+    (4) edge (5)
+    (5) edge (6)
+    (6) edge (7)
+    (7) edge (8)
+     edge (9)
+     edge (10);
+\end{tikzpicture}
+\end{center}
+\caption{Labeling on the graph $S_{4}^5$.}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+
+\end{frame}
 
 \end{document}
