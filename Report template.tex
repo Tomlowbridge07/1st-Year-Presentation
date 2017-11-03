@@ -15,10 +15,10 @@
   \leavevmode%
   \hbox{%
   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
-    \usebeamerfont{author in head/foot}\insertinstitute
+    \usebeamerfont{author in head/foot}\inserttitle
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
-    \usebeamerfont{title in head/foot}\insertsubsection
+    \usebeamerfont{title in head/foot}\insertauthor
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
     \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
@@ -47,6 +47,7 @@
 %\usepackage{newfloat}
 \usepackage{subcaption}
 \usepackage{bm}
+\usepackage{hyperref}
 
 \usetikzlibrary{calc}
 \usetikzlibrary{fit}
@@ -59,6 +60,8 @@
 \newcommand{\halflength}{\ensuremath{\floor{\frac{m}{2}}}}
 \newcommand{\floor}[1]{\left \lfloor #1 \right \rfloor}
 \newcommand{\ceil}[1]{\left \lceil #1 \right \rceil}
+\newcommand{\pospart}[1]{\left( #1 \right)_{+}}
+\newcommand{\negpart}[1]{\left( #1 \right)_{-}}
 \newcommand{\set}[2]{\left\{ #1 \, | \, #2 \right\}}
 
 \newcommand{\oneline}[1]{\resizebox{\dimexpr\paperwidth - 3ex}{!}{#1}}
@@ -75,7 +78,7 @@
 %\setbeamertemplate{navigation symbols}{} 
 %\logo{} 
 \institute{University Of Nottingham} 
-%\date{} 
+\date{December 13, 2017} 
 %\subject{} 
 \begin{document}
 
@@ -94,25 +97,28 @@
  \begin{itemize}
  \item Introduction to Game
   \begin{itemize}
-  \item Pure Game
-  \item Mixed Game
+  \item \hyperlink{Introduction to Game: Pure Game}{Pure Game}
+  \item \hyperlink{Introduction to Game: Mixed Game}{Mixed Game}
   \end{itemize}
  \item Solved Graphs
   \begin{itemize}
-  \item Hamiltonian graphs
-  \item Complete bipartite graph
-  \item Star graph
-  \item Line graph
+  \item \hyperlink{Solved Graphs: Hamiltonian graphs}{Hamiltonian graphs}
+  \item \hyperlink{Solved Graphs: Complete bipartite graphs}{Complete bipartite graph}
+  \item \hyperlink{Solved Graphs: Star graph}{Star graph}
+  \item \hyperlink{Solved Graphs: Line graph}{Line graph}
   \end{itemize}   
  \end{itemize}
-\item Correction of line graph strategy
-\item Extension of line graph strategy
-\item Introduction to the elongated star
-\item Future Work
+\item \hyperlink{Problem with line graph strategy}{Problem with line graph strategy}
+\item \hyperlink{Correction of line graph strategy}{Correction of line graph strategy}
+\item \hyperlink{Extension of correction strategy}{Extension of correction strategy}
+\item \hyperlink{Introduction to the elongated star}{Introduction to the elongated star}
+\item \hyperlink{Future work}{Future work}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Introduction to Patrolling Games}
+\hypertarget{Introduction to Game: Pure Game}{}
+\begin{frame}{Introduction to Game: Pure Game}
+
 A Patrolling game, $G=G(Q,T,m)$ is made of 3 major components
 \begin{itemize}
 \item A Graph, $Q=(N,E)$, made of nodes, $N$ ($|N|=n$), and a set of edges, $E$.
@@ -129,7 +135,7 @@ The strategies are collected into the sets, $\mathcal{W}$ and $\mathcal{A}$ , fo
 
 \end{frame}
 
-\begin{frame}{Payoffs}
+\begin{frame}{Introduction to Game: Pure Game}
 The game is formulated as win-lose (a zero-sum game) with a payoff for the patroller of
 \begin{align*}
 P(W,(i,\tau))=\left\{ \begin{array}{l}
@@ -140,7 +146,7 @@ P(W,(i,\tau))=\left\{ \begin{array}{l}
 With a pure payoff matrix $\mathcal{P}=(P(W_{i},A_{j}))_{i \in \{ 1,...,|\mathcal{W}| \}, j \in \{ 1,...,|\mathcal{A}| \}}$
 \end{frame}
 
-\begin{frame}{Example of a game}
+\begin{frame}{Introduction to Game: Pure Game}
 The game played on $Q$ as below with $m=3$ and $T=7$
 
 \begin{center}
@@ -180,58 +186,58 @@ The game played on $Q$ as below with $m=3$ and $T=7$
     (11) edge (12)
     ;
 
- \node (GraphLabel) [shift={(0,1)}] at (1) {$Q$}; 
+ %\node (GraphLabel) [shift={(0,1)}] at (1) {$Q$}; 
 
 %Slide 2 (first animation)
   \visible<2>{
-  \node (TimeLabel) [shift={(1,1)}] at (1) {$t=0$};
+  \node (TimeLabel) [shift={(2.5,1.3)}] at (1) {\huge $t=0$};
   \node[main node,fill=blue!30] (1) at (1) {$1$};
   \path[->,color=blue] (1) edge (6); 
     }
 %Slide 3
   \visible<3>{
-  \node (TimeLabel) [shift={(1,1)}] at (1) {$t=1$};
+   \node (TimeLabel) [shift={(2.5,1.3)}] at (1) {\huge $t=1$};
   \node[main node,fill=blue!30] (6) at (6) {$6$};
   \path[->,color=blue] (6) edge (7); 
     }
 %Slide 4
   \visible<4>{
-  \node (TimeLabel) [shift={(1,1)}] at (1) {$t=2$};
+   \node (TimeLabel) [shift={(2.5,1.3)}] at (1) {\huge $t=2$};
   \node[main node,fill=blue!30] (7) at (7) {$7$};
   \path[->,color=blue] (7) edge (3);
   
   \node[main node,fill=red!30] (8) at (8) {$8$};
-  \node[color=red] (Attacktimelabel) [shift={(3,0)}] at (8) {Attack Starting, $t_{A}=1$};
+  \node[color=red] (Attacktimelabel) [shift={(-1,2.2)}] at (8) {Attack Starting, $t_{A}=1$};
     }
 %Slide 5
   \visible<5>{
-  \node (TimeLabel) [shift={(1,1)}] at (1) {$t=3$};
+   \node (TimeLabel) [shift={(2.5,1.3)}] at (1) {\huge $t=3$};
   \node[main node,fill=blue!30] (3) at (3) {$3$};
   \node[color=blue] (WaitingLabel) [shift={(0,0.7)}] at (3) {Wait};
   
   \node[main node,fill=red!30] (8) at (8) {$8$};
-  \node[color=red] (Attacktimelabel) [shift={(1.5,0)}] at (8) {$t_{A}=2$}; 
+  \node[color=red] (Attacktimelabel) [shift={(0,2.2)}] at (8) {$t_{A}=2$}; 
     }
 %Slide 6
   \visible<6>{
-  \node (TimeLabel) [shift={(1,1)}] at (1) {$t=4$};
+   \node (TimeLabel) [shift={(2.5,1.3)}] at (1) {\huge $t=4$};
   \node[main node,fill=blue!30] (3) at (3) {$3$};
   \path[->,color=blue] (3) edge (4);
   
   \node[main node,fill=red!30] (8) at (8) {$8$};  
-  \node[color=red] (Attacktimelabel) [shift={(1.5,0)}] at (8) {$t_{A}=3$};
+  \node[color=red] (Attacktimelabel) [shift={(0,2.2)}] at (8) {$t_{A}=3$};
     }
 %Slide 7
   \visible<7>{
-  \node (TimeLabel) [shift={(1,1)}] at (1) {$t=5$};
+   \node (TimeLabel) [shift={(2.5,1.3)}] at (1) {\huge $t=5$};
   \node[main node,fill=blue!30] (4) at (4) {$4$};
   \path[->,color=blue] (4) edge (8); 
   
-  \node[color=red] (Attacktimelabel) [shift={(2,0)}] at (8) {Attacker Done};
+  \node[color=red] (Attacktimelabel) [shift={(-1,2.2)}] at (8) {Attacker Done};
     }    
 %Slide 8
   \visible<8>{
-  \node (TimeLabel) [shift={(1,1)}] at (1) {$t=6$};
+   \node (TimeLabel) [shift={(2.5,1.3)}] at (1) {\huge $t=6$};
   \node[main node,fill=blue!30] (8) at (8) {$8$}; 
     }                 
 \end{tikzpicture}
@@ -239,8 +245,8 @@ The game played on $Q$ as below with $m=3$ and $T=7$
 \end{center}
 \only<1>{
 \begin{itemize}
-\item[\textcolor{blue}{Patroller:}] \textcolor{blue}{ $W(0)=1$ , $W(1)=6$ , $W(2)= 7$ , $W(3)=3$ , $W(4)=3$ , $W(5)=4$ , $W(8)= 8$}
-\item[\textcolor{red}{Attacker:}] \textcolor{red}{$(8,2)$}
+\item[] \textcolor{blue}{Patroller:} \textcolor{blue}{ $W(0)=1$ , $W(1)=6$ , $W(2)= 7$ , $W(3)=3$ , $W(4)=3$ , $W(5)=4$ , $W(8)= 8$}
+\item[] \textcolor{red}{Attacker:} \textcolor{red}{$(8,2)$}
 \end{itemize}
 }
 \only<8>
@@ -249,7 +255,8 @@ The attacker fails to catch the patroller, therefore the patroller loses (and th
 }
 \end{frame}
 
-\begin{frame}{Mixed games}
+\hypertarget{Introduction to Game: Mixed Game}{}
+\begin{frame}{Introduction to Game: Mixed Game}
 Both the patroller and attacker will play their pure(realised) strategies with certain probabilities, let $\bm{\pi}$ be a mixed strategy for the patroller and let $\bm{\phi}$ be a mixed strategy for the attacker. We collect these into the sets $\Pi$ and $\Phi$ for the patroller and attacker respectively.
 
 Then the payoff for the patroller of this mixed game becomes
@@ -261,7 +268,7 @@ P(\bm{\pi} ,\bm{\phi})=\sum\limits_{i=1}^{|\mathcal{W}|} \sum\limits_{j=1}^{|\ma
 By using the pure payoff as $1$ when capture occurs and $0$ otherwise, the mixed payoff is equivalent to the probability of capture.
 \end{frame}
 
-\begin{frame}{Equilibrium and Value}
+\begin{frame}{Introduction to Game: Mixed Game}
 \begin{block}{Mixed Nash equilibrium}
 A choice of $\bm{\pi}^*$ and $\bm{\phi}^*$ is said to be in \textit{Nash equilibrium} if 
 \begin{align*}
@@ -275,24 +282,175 @@ We do this by searching for the games value, $$V(G) \equiv \max\limits_{\bm{\pi}
 This is done by achieving both upper and lower bounds on the value of the game.
 \end{frame}
 
-\begin{frame}{Solved graphs:Hamiltonian, Complete Bipartite and Star}
+\begin{frame}{Solved graphs: Hamiltonian graphs}
+\hypertarget{Solved graphs: Hamiltonian graphs}{}
+
+A graph is Hamiltonian if it is possible to find a cycle which visits every node exactly one (apart from the start/finish).
 
 \begin{block}{Hamiltonian graphs}
 A Hamiltonian graph has the value $V=\frac{m}{n}$
 \end{block}
 
-\begin{block}{Bipartite graph}
+Two common Hamiltonian graphs are the Cyclic graph (of n nodes $C_{n}$) and the Complete graph (of n nodes $K_{n}$).
+\begin{center}
+\begin{figure}
+
+\begin{tabular}{@{}c@{}}
+  \begin{tabular}{c}
+\begin{tikzpicture}[baseline=(current bounding box.north),-,auto,node distance=1cm,
+                    main node/.style={circle,draw,fill=black,font=\sffamily\bfseries}]
+
+  \node[main node] (1) {};
+  \node[main node] (2) [above right of=1] {};
+  \node[main node] (3) [right of=2] {};
+  \node[main node] (4) [right of=3] {};
+  \node[main node] (5) [below right of=4] {};
+  \node[main node] (6) [below left of=5] {};
+  \node[main node] (7) [left of=6] {};
+  \node[main node] (8) [left of=7] {};
+  
+
+  \path[every node/.style={font=\sffamily}]
+  (1) edge (2)
+  (2) edge (3)
+  (3) edge (4)
+  (4) edge (5)
+  (5) edge (6)
+  (6) edge (7)
+  (7) edge (8)
+  (8) edge (1);
+
+   
+\end{tikzpicture}
+     
+      \\ \small $C_{8}$
+  \end{tabular} \qquad
+  \begin{tabular}{c}
+  
+\begin{tikzpicture}[baseline=(current bounding box.north),-,auto,node distance=1cm,
+                    main node/.style={circle,draw,fill=black,font=\sffamily\bfseries}]
+
+  \node[main node] (1) {};
+  \node[main node] (2) [shift={(1,-0.8)}] at (1) {};
+  \node[main node] (3) [shift={(0.5,-1.8)}] at (1) {};
+  \node[main node] (4) [shift={(-0.5,-1.8)}] at (1) {};
+  \node[main node] (5) [shift={(-1,-0.8)}] at (1) {};
+
+  
+
+  \path[every node/.style={font=\sffamily}]
+  (1) edge (2)
+      edge (3)
+      edge (4)
+      edge (5)
+  (2) edge (3)
+      edge (4)
+      edge (5)    
+  (3) edge (4)
+      edge (5)
+  (4) edge (5);
+
+
+   
+\end{tikzpicture}
+
+ \\ \small $K_{5}$
+  \end{tabular} \\
+\end{tabular}
+\caption{Examples of Cyclic and Complete graphs}
+\end{figure}
+\end{center}
+
+
+
+\end{frame}
+
+\hypertarget{Solved graphs: Complete bipartite graphs}{}
+\begin{frame}{Solved graphs: Complete bipartite graphs}
+
+A bipartite graph is a graph made of two non-adjacent sets, the complete version has all connections.
+
+\begin{block}{Complete bipartite graph}
 A complete bipartite graph, $K_{a,b}$ as value
-$$V=\frac{m}{2 \max (a,b)}$$
+$V=\frac{m}{2 \max (a,b)}$
 \end{block}
 
+\begin{center}
+\begin{figure}
+\begin{tabular}{c}
+\begin{tikzpicture}[baseline=(current bounding box.north),-,auto,node distance=1cm,
+                    main node/.style={circle,draw,fill=black,font=\sffamily\bfseries}]
+
+  \node[main node] (1) {};
+  \node[main node] (2) [below of=1] {};
+  \node[main node] (3) [below of=2] {};
+  \node[main node] (4) [right of=1] {};
+  \node[main node] (5) [below of=4] {};
+
+  
+
+  \path[every node/.style={font=\sffamily}]
+  (1) edge (4)
+      edge (5)
+  (2) edge (4)
+      edge (5)    
+  (3) edge (4)
+      edge (5);
+
+   
+\end{tikzpicture}
+\\ \small $K_{3,2}$
+\end{tabular}
+\caption{Example of a Complete bipartite graph}
+\end{figure}
+
+\end{center}
+
+\end{frame}
+
+\hypertarget{Solved graphs: Star graph}{}
+\begin{frame}{Solved graphs: Star graph}
+
+The star graph,$S_{n}$, is $n$ nodes adjacent only to the centre. 
 
 \begin{block}{Star graph}
 The star $S_{n} \equiv K_{1,n}$ so has the value $V=\frac{m}{2n}$
 \end{block}
+
+\begin{center}
+\begin{figure}
+\begin{tabular}{c}
+\begin{tikzpicture}[baseline=(current bounding box.north),-,auto,node distance=1cm,
+                    main node/.style={circle,draw,fill=black,font=\sffamily\bfseries}]
+
+  \node[main node] (1) {};
+  \node[main node] (2) [above of=1] {};
+  \node[main node] (3) [right of=1] {};
+  \node[main node] (4) [below of=1] {};
+  \node[main node] (5) [left of=1] {};
+
+  
+
+  \path[every node/.style={font=\sffamily}]
+  (1) edge (2)
+      edge (3)
+      edge (4)
+      edge (5);
+
+   
+\end{tikzpicture}
+\\ \small $S_{4}$
+\end{tabular}
+\caption{Example of a Star graph}
+\end{figure}
+
+\end{center}
+
 \end{frame}
 
-\begin{frame}{Solved graphs:Line}
+\hypertarget{Solved graphs: Line graph}{}
+\begin{frame}{Solved graphs:Line graph}
+
 \begin{block}{Line graph}
 The line graph, $L_{n}$ made of $n$ nodes has a value dependent on $(n,m)$
 \begin{enumerate}
@@ -305,9 +463,10 @@ The line graph, $L_{n}$ made of $n$ nodes has a value dependent on $(n,m)$
 \end{block}
 \end{frame}
 
-\begin{frame}{Correction to Line graph}
+\hypertarget{Problem with line graph strategy}{}
+\begin{frame}{Problem with line graph strategy}
 
-It was initially state that in the region two $n-1 \leq m \leq 2(n-1)$, the value $\frac{m}{2(n-1)}$ is achieved by the attacker attacking using the \textcolor{red}{diametric strategy}, which is to attack at opposite ends of the line with equal probability for all possible starting times. This is supposed to guarantee that $V \leq \frac{m}{2(n-1)}$.
+It was initially stated that in the region two $n-1 \leq m \leq 2(n-1)$, the value $\frac{m}{2(n-1)}$ is achieved by the attacker attacking using the \textcolor{red}{diametric strategy}, which is to attack at opposite ends of the line with equal probability for all possible starting times. This is supposed to guarantee that $V \leq \frac{m}{2(n-1)}$.
 \newline
 \newline
 \textbf{Example.}
@@ -334,7 +493,8 @@ The walk $\{ 1,2,3,4,5 \}$ guarantee's the capture of all attacks made.
 
 \end{frame}
 
-\begin{frame}{Limiting result}
+\begin{frame}{Problem with line graph strategy}
+
 \textbf{Example.}
 Consider $L_{31}$ with $m=45$
 
@@ -345,27 +505,41 @@ Consider $L_{31}$ with $m=45$
 
 \end{frame}
 
-\begin{frame}{Limiting result}
+\begin{frame}{Problem with the line graph strategy}
+
+The problem is under the diametric attack, a patroller can catch
+\tiny
+
+\begin{align*}
+&m-\bar{d}+\pospart{m \times (\floor{\frac{T-2m+1}{\bar{d}}}+1)} +  \pospart{T-(m-1+(\floor{\frac{T-2m+1}{\bar{d}}}+1)\bar{d})} +  \\
+&\hspace{75pt} \pospart{T-(m-1+(\floor{\frac{T-2m+1}{\bar{d}}}+2)\bar{d})}
+\end{align*}
+
+\normalsize
+Attacks. From this we can get
 
 \begin{lemma}[Condition on $T$ for bound to hold]
-When $T=m-1+(k+1)(n-1)$ for some $k \in \mathbb{N}_{0}$ then the diametric bound holds. Otherwise as $T \rightarrow \infty$ then the diametric bound ($V \leq \frac{m}{2(n-1)}$) holds.
+When $T=m-1+(k+1)(n-1)$ for some $k \in \mathbb{N}_{0}$ then the diametric bound holds. Otherwise as $T \rightarrow \infty$ then the diametric bound, $V \leq \frac{m}{2(n-1)}$, holds.
 \end{lemma}
 
 \end{frame}
 
-\begin{frame}{Solution to diametric bound line problem}
+\hypertarget{Correction to Line graph strategy}{}
+\begin{frame}{Correction of line graph strategy}
 We propose a solution to the problem, by limiting the time
 
 \begin{definition}[Time limited diametric attack]
 When $T \geq m+n-2$ we have the \textit{time limited diametric attack} (on the line) strategy is for the attacker to attack at both ends of the line with equal probability for starting times $0,1,...,n-2$
 \end{definition}
 
-This restriction to the attacking time guarantees to get the sought upper bound of $V \leq \frac{m}{2(n-1)}$. 
+This restriction to the attacking time guarantees to get the upper bound of $V \leq \frac{m}{2(n-1)}$. 
 
 This works due to the spacing of the attack times.
 \end{frame}
 
-\begin{frame}{General time limited diametric attack}
+\hypertarget{Extension of correction strategy}{}
+\begin{frame}{Extension of correction strategy}
+
 
 Let $\bar{d}$ be the diameter of the graph, i.e the distance between the furthest apart nodes then using
 
@@ -381,20 +555,23 @@ $$V \leq \dfrac{m}{2\bar{d}}.$$
 \end{frame}
 
 
-\begin{frame}{Polygonal attack}
+\begin{frame}{Extension of correction strategy}
 Using $d(i,j)$ as the distance between nodes $i$ and $j$ we can get a more general type of attack.
 
 \begin{definition}[Polygonal attack]
-A \textit{$d$-polygonal attack} is an attack at a set of nodes $D= \set{i \in N}{ d(i,i')=d}$ at the time intervals $\tau,\tau+1,...,\tau+d-1$ (for a chosen initial $\tau$) all equally probable.
+A \textit{$d$-polygonal attack} is an attack at a set of nodes $D= \set{i \in N}{ d(i,j)=d , \forall j \in D}$ at the time intervals $\tau,\tau+1,...,\tau+d-1$ (for a chosen initial $\tau$) all equally probable.
 \end{definition}
 
 \begin{lemma}[Polygonal bound]
-When $T \geq m+d-1$ and a set $D$ as in the $d$-polygonal attack, the bound $V \leq \max \{ \frac{1}{|D|} , \frac{m}{|D|d} \}$ is valid.
+When $T \geq m+d-1$ and a set $D$ as in the $d$-polygonal attack exists, the value has an upper bound of $V \leq \max \{ \frac{1}{|D|} , \frac{m}{|D|d} \}$ .
 \end{lemma}
 
 \end{frame}
 
-\begin{frame}{Mixing Lines and stars}
+\hypertarget{Introduction to the elongated star}{}
+\begin{frame}{Introduction to the elongated star}
+
+
 We now wish to integrate features of a star into a line.
 We will form the elongated star $S_{n}^{k}$. We will use the labelling as below
 
@@ -432,7 +609,8 @@ We will form the elongated star $S_{n}^{k}$. We will use the labelling as below
 
 \end{frame}
 
-\begin{frame}
+\hypertarget{Future work}{}
+\begin{frame}{Future work}
 
 \end{frame}
 

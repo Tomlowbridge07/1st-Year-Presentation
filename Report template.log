@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.6.5)  2 NOV 2017 19:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.6.5)  3 NOV 2017 19:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1473,20 +1473,20 @@ File: tikzlibrarybackgrounds.code.tex 2013/07/18 v3.0.1a (rcs-revision 1.3)
 ) (./Report template.aux)
 \openout1 = `"Report template.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1558,7 +1558,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 )) ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box78
-Package hyperref Info: Link coloring OFF on input line 80.
+Package hyperref Info: Link coloring OFF on input line 83.
 
 (/maths/linuxlocal/AMD64/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1569,9 +1569,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count295
 )
-LaTeX Info: Redefining \ref on input line 80.
-LaTeX Info: Redefining \pageref on input line 80.
-LaTeX Info: Redefining \nameref on input line 80.
+LaTeX Info: Redefining \ref on input line 83.
+LaTeX Info: Redefining \pageref on input line 83.
+LaTeX Info: Redefining \nameref on input line 83.
  (./Report template.out) (./Report template.out)
 \@outlinefile=\write6
 \openout6 = `"Report template.out"'.
@@ -1603,14 +1603,14 @@ Dictionary: translator-numbers-dictionary, Language: English
 cts/translator-theorem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 80.
+LaTeX Info: Redefining \includegraphics on input line 83.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
 (./Report template.nav)
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 84.
+(Font)              size <5> substituted on input line 87.
 
 [1
 
@@ -1618,12 +1618,12 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 map}] [2
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 130.
+LaTeX Font Info:    Try loading font information for U+msa on input line 136.
 
 (/maths/linuxlocal/AMD64/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 130.
+LaTeX Font Info:    Try loading font information for U+msb on input line 136.
 
 (/maths/linuxlocal/AMD64/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1658,32 +1658,36 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ] [17
 
+] [18
+
 ]
-<DiametricAttack(m_45,d_30).png, id=137, 646.66594pt x 397.485pt>
+[19
+
+] <DiametricAttack(m_45,d_30).png, id=179, 646.66594pt x 397.485pt>
 File: DiametricAttack(m_45,d_30).png Graphic file (type png)
 
 <use DiametricAttack(m_45,d_30).png>
-Package pdftex.def Info: DiametricAttack(m_45,d_30).png used on input line 346.
+Package pdftex.def Info: DiametricAttack(m_45,d_30).png used on input line 506.
 
 (pdftex.def)             Requested size: 258.66179pt x 158.99118pt.
- [18
+ [20
 
- <./DiametricAttack(m_45,d_30).png (PNG copy)>] [19
-
-] [20
-
-] [21
+ <./DiametricAttack(m_45,d_30).png (PNG copy)>] [21
 
 ] [22
 
+] [23
+
+] [24
+
 ]
-Overfull \hbox (13.23444pt too wide) in paragraph at lines 433--433
+Overfull \hbox (13.23444pt too wide) in paragraph at lines 610--610
  [] 
  []
 
-[23
+[25
 
-] [24
+] [26
 
 ]
 \tf@nav=\write7
@@ -1695,11 +1699,11 @@ Overfull \hbox (13.23444pt too wide) in paragraph at lines 433--433
 \tf@snm=\write9
 \openout9 = `"Report template.snm"'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 439.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 439.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 617.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 617.
  (./Report template.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 439.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 439.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 617.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 617.
 Package rerunfilecheck Info: File `"Report template".out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1709,42 +1713,62 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 31041 strings out of 492995
- 622959 string characters out of 6132690
- 694474 words of memory out of 5000000
- 33959 multiletter control sequences out of 15000+600000
- 21046 words of font info for 77 fonts, out of 8000000 for 9000
+ 31090 strings out of 492995
+ 624072 string characters out of 6132690
+ 694588 words of memory out of 5000000
+ 33986 multiletter control sequences out of 15000+600000
+ 26283 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,21n,106p,10468b,861s stack positions out of 5000i,500n,10000p,200000b,80000s
-</maths/linuxlocal/AMD64/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmex10.pfb></maths/linuxlocal/AMD64/texlive/2017/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi10.pfb></maths/linuxlocal/AMD64/texlive/2017/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi12.pfb></maths/linuxlocal/AMD64/texlive/2017/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></maths/linuxlocal/AMD64/texli
-ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></maths/linuxlocal/
-AMD64/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></math
-s/linuxlocal/AMD64/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmextra/
-cmmib8.pfb></maths/linuxlocal/AMD64/texlive/2017/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr10.pfb></maths/linuxlocal/AMD64/texlive/2017/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr12.pfb></maths/linuxlocal/AMD64/texlive/2017/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr6.pfb></maths/linuxlocal/AMD64/texlive/201
-7/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></maths/linuxlocal/AMD64/t
-exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></maths/linuxloc
-al/AMD64/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></ma
-ths/linuxlocal/AMD64/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-s12.pfb></maths/linuxlocal/AMD64/texlive/2017/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmss8.pfb></maths/linuxlocal/AMD64/texlive/2017/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmss9.pfb></maths/linuxlocal/AMD64/texlive/2017/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmssbx10.pfb></maths/linuxlocal/AMD64/texlive/20
-17/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></maths/linuxlocal/AMD
-64/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></maths/li
-nuxlocal/AMD64/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
-></maths/linuxlocal/AMD64/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/s
-ymbols/msbm10.pfb>
-Output written on "Report template.pdf" (24 pages, 292599 bytes).
+ 56i,21n,106p,10468b,911s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Correction\040of\040line\040graph\040strategy} ha
+s been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Solved\040Graphs:\040Line\040graph} has been refere
+nced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Solved\040Graphs:\040Star\040graph} has been refere
+nced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Solved\040Graphs:\040Complete\040bipartite\040graph
+s} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Solved\040Graphs:\040Hamiltonian\040graphs} has bee
+n referenced but does not exist, replaced by a fixed one
+
+</maths/linuxlocal/AMD64/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmex10.pfb></maths/linuxlocal/AMD64/texlive/2017/texmf-dist/fonts/type1/public
+/amsfonts/cmextra/cmex7.pfb></maths/linuxlocal/AMD64/texlive/2017/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi10.pfb></maths/linuxlocal/AMD64/texlive/2017/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></maths/linuxlocal/AMD64/te
+xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></maths/linuxloc
+al/AMD64/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></mat
+hs/linuxlocal/AMD64/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+8.pfb></maths/linuxlocal/AMD64/texlive/2017/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmib10.pfb></maths/linuxlocal/AMD64/texlive/2017/texmf-dist/fonts/type1
+/public/amsfonts/cmextra/cmmib8.pfb></maths/linuxlocal/AMD64/texlive/2017/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></maths/linuxlocal/AMD64/texlive
+/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></maths/linuxlocal/AM
+D64/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></maths/li
+nuxlocal/AMD64/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb>
+</maths/linuxlocal/AMD64/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr6.pfb></maths/linuxlocal/AMD64/texlive/2017/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr7.pfb></maths/linuxlocal/AMD64/texlive/2017/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr8.pfb></maths/linuxlocal/AMD64/texlive/2017/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmss10.pfb></maths/linuxlocal/AMD64/texlive/2017
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></maths/linuxlocal/AMD64/
+texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></maths/linuxl
+ocal/AMD64/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></m
+aths/linuxlocal/AMD64/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+ssbx10.pfb></maths/linuxlocal/AMD64/texlive/2017/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmssi10.pfb></maths/linuxlocal/AMD64/texlive/2017/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb></maths/linuxlocal/AMD64/texlive/2017/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></maths/linuxlocal/AMD64/texlive
+/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></maths/linuxlocal/AM
+D64/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "Report template.pdf" (26 pages, 340817 bytes).
 PDF statistics:
- 257 PDF objects out of 1000 (max. 8388607)
- 192 compressed objects within 2 object streams
- 49 named destinations out of 1000 (max. 500000)
+ 319 PDF objects out of 1000 (max. 8388607)
+ 246 compressed objects within 3 object streams
+ 69 named destinations out of 1000 (max. 500000)
  102 words of extra memory for PDF output out of 10000 (max. 10000000)
 
