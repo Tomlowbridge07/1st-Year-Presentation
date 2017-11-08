@@ -15,7 +15,7 @@
   \leavevmode%
   \hbox{%
   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
-    \usebeamerfont{author in head/foot}\inserttitle
+    \usebeamerfont{author in head/foot} \hyperlink{Patrolling Games}{\inserttitle}
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
     \usebeamerfont{title in head/foot}\insertauthor
@@ -82,6 +82,7 @@
 %\subject{} 
 \begin{document}
 
+\hypertarget{Patrolling Games}{}
 \begin{frame}
 \titlepage
 \end{frame}
@@ -401,7 +402,7 @@ $V=\frac{m}{2 \max (a,b)}$
 \end{tikzpicture}
 \\ \small $K_{3,2}$
 \end{tabular}
-\caption{Example of a Complete bipartite graph}
+\caption{Example of a complete bipartite graph}
 \end{figure}
 
 \end{center}
@@ -441,7 +442,7 @@ The star $S_{n} \equiv K_{1,n}$ so has the value $V=\frac{m}{2n}$
 \end{tikzpicture}
 \\ \small $S_{4}$
 \end{tabular}
-\caption{Example of a Star graph}
+\caption{Example of a star graph}
 \end{figure}
 
 \end{center}
@@ -449,19 +450,89 @@ The star $S_{n} \equiv K_{1,n}$ so has the value $V=\frac{m}{2n}$
 \end{frame}
 
 \hypertarget{Solved graphs: Line graph}{}
-\begin{frame}{Solved graphs:Line graph}
+\begin{frame}{Solved graphs: Line graph}
+
+The line graph, $L_{n}$, made of $n$ nodes each adjacent to two other nodes (apart from the ends)
 
 \begin{block}{Line graph}
-The line graph, $L_{n}$ made of $n$ nodes has a value dependent on $(n,m)$
+The line graph, $L_{n}$ has a value dependent on $(n,m)$
 \begin{enumerate}
 \item If $m > 2(n-1)$ then $V=1$.
-\item If $n-1 \leq m \leq 2(n-1)$ then $V=\frac{m}{2(n-1)}$
+\item If $n-1 < m \leq 2(n-1)$ then $V=\frac{m}{2(n-1)}$
 \item If $m=2 , n\geq 3$ then $V=\frac{1}{\ceil{\frac{n}{2}}}$
 \item If $m=n-1 \text{ or } m=n-2  \text{ and } m=2k \text{ for some } k \geq 2 $ then $V=\frac{1}{2}$
-\item If $m \leq n-3 \text{ or } m=n-2 \text{ and } m=2k+1 \text{ for some } k \geq 1$ then $V=\frac{m}{m+n-1}$
+\item If $3 \leq m \leq n-3$ or  $m=n-2$ and $m=2k+1$ for some  $k \geq 1$ then $V=\frac{m}{m+n-1}$
 \end{enumerate}
 \end{block}
+Note. The solution for $m=1$ is know for every graph as $V=\frac{1}{|N|}=\frac{1}{n}$, and if $m=n=2$ then we know $V=1$.
 \end{frame}
+
+\begin{frame}{Solved graphs: Line graph}
+
+\begin{center}
+\begin{figure}
+\begin{tabular}{c}
+\begin{tikzpicture}[baseline=(current bounding box.north),-,auto,node distance=1cm,
+                    main node/.style={circle,draw,fill=black,font=\sffamily\bfseries}]
+
+  \node[main node] (1) {};
+  \node[main node] (2) [right of=1] {};
+  \node[main node] (3) [right of=2] {};
+  \node[main node] (4) [right of=3] {};
+  \node[main node] (5) [right of=4] {};
+  \node[main node] (6) [right of=5] {};
+  \node[main node] (7) [right of=6] {};
+  \node[main node] (8) [right of=7] {};
+  \node[main node] (9) [right of=8] {};
+  \node[main node] (10) [right of=9] {};
+
+
+  \path[every node/.style={font=\sffamily}]
+  (1) edge (2)
+  (2) edge (3)
+  (3) edge (4)
+  (4) edge (5)
+  (5) edge (6)
+  (6) edge (7)
+  (7) edge (8)
+  (8) edge (9)
+  (9) edge (10);
+
+   
+\end{tikzpicture}
+\\ \small $L_{10}$
+\end{tabular}
+\caption{Example of a line graph}
+\end{figure}
+
+\end{center}
+
+\begin{columns}[onlytextwidth,T]
+   \column{\dimexpr\linewidth-75mm-5mm}
+    Regions are:  
+    \begin{enumerate}
+    \item $m>18$
+    \item $9 < m \leq 18$
+    \item $m=2$
+    \item $m=9,8$
+    \item $m=$
+    \end{enumerate}
+
+      \column{75mm}
+      \begin{minipage}{75mm}
+      \begin{figure}
+      \resizebox{\linewidth}{!}{
+      \input{LineRegions(L_10).tex}}
+      \caption{Value of the line graph for varying $m$}
+      \end{figure}
+      \end{minipage}
+
+
+    \end{columns}
+
+
+\end{frame}
+
 
 \hypertarget{Problem with line graph strategy}{}
 \begin{frame}{Problem with line graph strategy}
@@ -499,7 +570,7 @@ The walk $\{ 1,2,3,4,5 \}$ guarantee's the capture of all attacks made.
 Consider $L_{31}$ with $m=45$
 
 \begin{figure}
-\includegraphics[scale=0.4]{DiametricAttack(m_45,d_30).png}
+\includegraphics[scale=0.4]{DiametricAttack(m_45,d_30)1.png}
 \caption{Best Upper Bound achievable under the diametric strategy}
 \end{figure}
 
@@ -516,7 +587,7 @@ The problem is under the diametric attack, a patroller can catch
 \end{align*}
 
 \normalsize
-Attacks. From this we can get
+attacks. From this we can get
 
 \begin{lemma}[Condition on $T$ for bound to hold]
 When $T=m-1+(k+1)(n-1)$ for some $k \in \mathbb{N}_{0}$ then the diametric bound holds. Otherwise as $T \rightarrow \infty$ then the diametric bound, $V \leq \frac{m}{2(n-1)}$, holds.
@@ -611,7 +682,6 @@ We will form the elongated star $S_{n}^{k}$. We will use the labelling as below
 
 \hypertarget{Future work}{}
 \begin{frame}{Future work}
-
 \end{frame}
 
 \end{document}
