@@ -26,6 +26,7 @@
   \end{beamercolorbox}}%
   \vskip0pt%
 }
+\setbeamertemplate{headline}{}
 \usefonttheme[onlymath]{serif}
 
 \usepackage{color}
@@ -52,6 +53,10 @@
 \usetikzlibrary{calc}
 \usetikzlibrary{fit}
 \usetikzlibrary{shapes.misc,calc, positioning, hobby, backgrounds}
+
+\tikzset{cross/.style={cross out, draw=black, minimum size=2*(#1-\pgflinewidth), inner sep=0pt, outer sep=0pt},
+%default radius will be 1pt. 
+cross/.default={1pt}}
 
 
 %\DeclarePairedDelimiter{\floor}{\lfloor}{\rightfloor}
@@ -98,34 +103,37 @@
  \begin{itemize}
  \item Introduction to Game
   \begin{itemize}
-  \item \hyperlink{Introduction to Game: Pure Game}{Pure Game}
-  \item \hyperlink{Introduction to Game: Mixed Game}{Mixed Game}
+  \item \hyperlink{Introduction to game: Pure game}{Pure game}
+  \item \hyperlink{Introduction to game: Mixed game}{Mixed game}
   \end{itemize}
  \item Solved Graphs
   \begin{itemize}
-  \item \hyperlink{Solved Graphs: Hamiltonian graphs}{Hamiltonian graphs}
-  \item \hyperlink{Solved Graphs: Complete bipartite graphs}{Complete bipartite graph}
-  \item \hyperlink{Solved Graphs: Star graph}{Star graph}
-  \item \hyperlink{Solved Graphs: Line graph}{Line graph}
+  \item \hyperlink{Solved graphs: Hamiltonian graphs}{Hamiltonian graphs}
+  \item \hyperlink{Solved graphs: Complete bipartite graphs}{Complete bipartite graph}
+  \item \hyperlink{Solved graphs: Star graph}{Star graph}
+  \item \hyperlink{Solved graphs: Line graph}{Line graph}
   \end{itemize}   
  \end{itemize}
-\item \hyperlink{Problem with line graph strategy}{Problem with line graph strategy}
-\item \hyperlink{Correction of line graph strategy}{Correction of line graph strategy}
+\item \hyperlink{Problem with diametricstrategy}{Problem with line graph strategy}
+\item \hyperlink{Correction of diametric line graph strategy}{Correction of line graph strategy}
 \item \hyperlink{Extension of correction strategy}{Extension of correction strategy}
 \item \hyperlink{Introduction to the elongated star}{Introduction to the elongated star}
 \item \hyperlink{Future work}{Future work}
 \end{itemize}
 \end{frame}
 
-\hypertarget{Introduction to Game: Pure Game}{}
-\begin{frame}{Introduction to Game: Pure Game}
+\section[]{Introduction to Game: Pure game}
+\hypertarget{Introduction to game: Pure game}{}
+\begin{frame}{\insertsection}
 
 A Patrolling game, $G=G(Q,T,m)$ is made of 3 major components
 \begin{itemize}
-\item A Graph, $Q=(N,E)$, made of nodes, $N$ ($|N|=n$), and a set of edges, $E$.
-\item A time horizon parameter, $T$ (with set $\mathcal{T}=\{0,1,...,T-1\}$).
-\item An attack time parameter, $m$.
+\item A \textcolor{red}{Graph, $Q=(N,E)$}, made of nodes, $N$ ($|N|=n$), and a set of edges, $E$.
+\item A \textcolor{red}{time horizon parameter, $T$} (with set $\mathcal{T}=\{0,1,...,T-1\}$).
+\item An \textcolor{red}{attack time parameter, $m$}.
 \end{itemize}
+
+\pause
 
 The game involves two players, the patroller and the attacker.
 \begin{itemize}
@@ -136,7 +144,7 @@ The strategies are collected into the sets, $\mathcal{W}$ and $\mathcal{A}$ , fo
 
 \end{frame}
 
-\begin{frame}{Introduction to Game: Pure Game}
+\begin{frame}{\insertsection}
 The game is formulated as win-lose (a zero-sum game) with a payoff for the patroller of
 \begin{align*}
 P(W,(i,\tau))=\left\{ \begin{array}{l}
@@ -147,7 +155,7 @@ P(W,(i,\tau))=\left\{ \begin{array}{l}
 With a pure payoff matrix $\mathcal{P}=(P(W_{i},A_{j}))_{i \in \{ 1,...,|\mathcal{W}| \}, j \in \{ 1,...,|\mathcal{A}| \}}$
 \end{frame}
 
-\begin{frame}{Introduction to Game: Pure Game}
+\begin{frame}{\insertsection}
 The game played on $Q$ as below with $m=3$ and $T=7$
 
 \begin{center}
@@ -256,8 +264,9 @@ The attacker fails to catch the patroller, therefore the patroller loses (and th
 }
 \end{frame}
 
-\hypertarget{Introduction to Game: Mixed Game}{}
-\begin{frame}{Introduction to Game: Mixed Game}
+\section[]{Introduction to Game: Mixed game}
+\hypertarget{Introduction to game: Mixed game}{}
+\begin{frame}{\insertsection}
 Both the patroller and attacker will play their pure(realised) strategies with certain probabilities, let $\bm{\pi}$ be a mixed strategy for the patroller and let $\bm{\phi}$ be a mixed strategy for the attacker. We collect these into the sets $\Pi$ and $\Phi$ for the patroller and attacker respectively.
 
 Then the payoff for the patroller of this mixed game becomes
@@ -269,7 +278,7 @@ P(\bm{\pi} ,\bm{\phi})=\sum\limits_{i=1}^{|\mathcal{W}|} \sum\limits_{j=1}^{|\ma
 By using the pure payoff as $1$ when capture occurs and $0$ otherwise, the mixed payoff is equivalent to the probability of capture.
 \end{frame}
 
-\begin{frame}{Introduction to Game: Mixed Game}
+\begin{frame}{\insertsection}
 \begin{block}{Mixed Nash equilibrium}
 A choice of $\bm{\pi}^*$ and $\bm{\phi}^*$ is said to be in \textit{Nash equilibrium} if 
 \begin{align*}
@@ -283,8 +292,9 @@ We do this by searching for the games value, $$V(G) \equiv \max\limits_{\bm{\pi}
 This is done by achieving both upper and lower bounds on the value of the game.
 \end{frame}
 
-\begin{frame}{Solved graphs: Hamiltonian graphs}
+\section[]{Solved graphs: Hamiltonian graphs}
 \hypertarget{Solved graphs: Hamiltonian graphs}{}
+\begin{frame}{\insertsection}
 
 A graph is Hamiltonian if it is possible to find a cycle which visits every node exactly one (apart from the start/finish).
 
@@ -366,8 +376,9 @@ Two common Hamiltonian graphs are the Cyclic graph (of n nodes $C_{n}$) and the 
 
 \end{frame}
 
+\section[]{Solved graphs: Complete bipartite graphs}
 \hypertarget{Solved graphs: Complete bipartite graphs}{}
-\begin{frame}{Solved graphs: Complete bipartite graphs}
+\begin{frame}{\insertsection}
 
 A bipartite graph is a graph made of two non-adjacent sets, the complete version has all connections.
 
@@ -409,6 +420,7 @@ $V=\frac{m}{2 \max (a,b)}$
 
 \end{frame}
 
+\section[]{Solved graphs: Star graph}
 \hypertarget{Solved graphs: Star graph}{}
 \begin{frame}{Solved graphs: Star graph}
 
@@ -449,8 +461,9 @@ The star $S_{n} \equiv K_{1,n}$ so has the value $V=\frac{m}{2n}$
 
 \end{frame}
 
+\section[]{Solved graphs: Line graph}
 \hypertarget{Solved graphs: Line graph}{}
-\begin{frame}{Solved graphs: Line graph}
+\begin{frame}{\insertsection}
 
 The line graph, $L_{n}$, made of $n$ nodes each adjacent to two other nodes (apart from the ends)
 
@@ -467,7 +480,7 @@ The line graph, $L_{n}$ has a value dependent on $(n,m)$
 Note. The solution for $m=1$ is know for every graph as $V=\frac{1}{|N|}=\frac{1}{n}$, and if $m=n=2$ then we know $V=1$.
 \end{frame}
 
-\begin{frame}{Solved graphs: Line graph}
+\begin{frame}{\insertsection}
 
 \begin{center}
 \begin{figure}
@@ -515,7 +528,7 @@ Note. The solution for $m=1$ is know for every graph as $V=\frac{1}{|N|}=\frac{1
     \item $9 < m \leq 18$
     \item $m=2$
     \item $m=9,8$
-    \item $m=$
+    \item $3 \leq m < 8$, $m=1$
     \end{enumerate}
 
       \column{75mm}
@@ -533,14 +546,105 @@ Note. The solution for $m=1$ is know for every graph as $V=\frac{1}{|N|}=\frac{1
 
 \end{frame}
 
+\begin{frame}{\insertsection}
+Focusing in on $n-1 < m \leq 2(n-1)$. We will look at the strategies used to get the bounds $V \leq \frac{m}{2(n-1)}$ and $V \geq \frac{m}{2(n-1)}$.
 
-\hypertarget{Problem with line graph strategy}{}
-\begin{frame}{Problem with line graph strategy}
+\begin{itemize}
+\item Patroller Strategy, $\bm{\pi}_{H}$, the embedded random Hamiltonian patrol.
+\item Attacker Strategy, $\bm{\phi}_{D}$, the diametric attack.
+\end{itemize}
 
-It was initially stated that in the region two $n-1 \leq m \leq 2(n-1)$, the value $\frac{m}{2(n-1)}$ is achieved by the attacker attacking using the \textcolor{red}{diametric strategy}, which is to attack at opposite ends of the line with equal probability for all possible starting times. This is supposed to guarantee that $V \leq \frac{m}{2(n-1)}$.
+\end{frame}
+
+\begin{frame}{\insertsection}
+An embedded random Hamiltonian patrol, $\bm{\pi}_{H}$, is made by `expanding' the line to be Hamiltonian (meaning every non-end node becomes two nodes). That is the patroller looks at $C_{2(n-1)}$ instead of $L_{n}$, then we get a bound of $V(C_{2(n-1)})=\frac{m}{2(n-1)}$. Now the patroller cannot do worse in $L_{n}$ than in $C_{2(n-1)}$, so a lower bound of $V \geq \frac{m}{2(n-1)} $ is achieved. In the line graph this is also known as oscillation.
+
+\begin{figure}
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}[baseline=(current bounding box.north),-,auto,node distance=1cm,
+                    thick,main node/.style={circle,draw,fill=black,font=\sffamily\bfseries}]
+
+  \node[main node] (1) {};
+  \node[main node] (2) [above right of=1] {};
+  \node[main node] (3) [right of=2] {};
+  \node[main node] (4) [right of=3] {};
+  \node[main node] (5) [right of=4] {};
+  \node[main node] (6) [below right of=5] {};
+  \node[main node] (7) [below right of=1] {};
+  \node[main node] (8) [right of=7] {};
+  \node[main node] (9) [right of=8] {};
+  \node[main node] (10) [right of=9] {};
+  
+  \node (P1) [right of=6] {};
+  \node (P2) [right of=P1] {};
+  
+  \node[main node] (a) [right of=P2] {};
+  \node[main node] (b) [right of=a] {};
+  \node[main node] (c) [right of=b] {};
+  \node[main node] (d) [right of=c] {};
+  \node[main node] (e) [right of=d] {};
+  \node[main node] (f) [right of=e] {};
+  
+  \draw[->] (P1) edge (P2);
+  
+
+  \path[every node/.style={font=\sffamily}]
+    (1) edge  (2)
+    edge (7)
+    (2) edge (3)
+    (3) edge (4)
+    (4) edge (5)
+    (5) edge (6)
+    (6) edge (10)
+    (7) edge (8)
+    (8) edge (9)
+    (9) edge (10)
+    (a) edge (b)
+    (b) edge (c)
+    (c) edge (d)
+    (d) edge (e)
+    edge (f);
+    
+     \path[dashed,thick,red,every node/.style={font=\sffamily}]
+    (2) edge  (7)
+    (3) edge (8)
+    (4) edge  (9)
+    (5) edge  (10);
+    
+  
+\node [shift={(0.6,-0.5)}] at (8) {$C_{10}$};
+\node [shift={(0.5,-0.5)}] at (c) {$L_{6}$};   
+\end{tikzpicture}
+}
+\end{center}
+\caption{$C_{10}$ can be simplified to $L_{6}$ by node identifying.}
+\end{figure}
+\end{frame}
+
+\begin{frame}{\insertsection}
+Let $d(i,i')$ is the distance between nodes $i$ and $i'$ with the distance measured by the minimum number of edges.
+
+\begin{definition}[Graph Diameter]
+The diameter of a graph $Q$ is definded by $\bar{d}=\max\limits_{i,i' \in N} d(i,i')$ . The node pairs satisfying this are called diametrical.
+\end{definition}
+
+A diametric attack, $\bm{\phi}_{D}$ is made by attacking the pair of diametric nodes $1$ and $n$ (the ends), starting with equal probability at every available star time. It is stated to give a bound of $V \leq \min\{\frac{1}{2},\frac{m}{2(n-1)}\}= \left\{
+\begin{array}{l} 
+\frac{1}{2} \text{, if } m<n-1 \\
+\frac{m}{2(n-1)} \text{, if } n-1 \leq m \leq 2(n-1),
+\end{array}
+\right.$ however....
+\end{frame}
+
+\section[]{Problem with the diametric strategy}
+\hypertarget{Problem with diametric strategy}{}
+\begin{frame}{\insertsection}
+
+In the region of $n-1 \leq m \leq 2(n-1)$ the proposed bound is $V \leq \frac{m}{2(n-1)}$. However a simple counter shows this to be false.
 \newline
 \newline
-\textbf{Example.}
+\textbf{Counter-example.}
 Consider $L_{5}$ with $T=m=5$ , then the patroller only needs to walk between the end nodes to win.
 \begin{center}
 \begin{tikzpicture}[-,auto,node distance=1.5cm,
@@ -564,22 +668,25 @@ The walk $\{ 1,2,3,4,5 \}$ guarantee's the capture of all attacks made.
 
 \end{frame}
 
-\begin{frame}{Problem with line graph strategy}
+\begin{frame}{\insertsection}
 
 \textbf{Example.}
 Consider $L_{31}$ with $m=45$
 
 \begin{figure}
-\includegraphics[scale=0.4]{DiametricAttack(m_45,d_30)1.png}
+%\includegraphics[scale=0.4]{DiametricAttack(m_45,d_30)1.png}
+\resizebox{0.95\linewidth}{!}{
+\input{DiametricAttack(m_45,d_30).tex}}
 \caption{Best Upper Bound achievable under the diametric strategy}
 \end{figure}
 
 \end{frame}
 
-\begin{frame}{Problem with the line graph strategy}
+\begin{frame}{\insertsection}
 
 The problem is under the diametric attack, a patroller can catch
 \tiny
+
 
 \begin{align*}
 &m-\bar{d}+\pospart{m \times (\floor{\frac{T-2m+1}{\bar{d}}}+1)} +  \pospart{T-(m-1+(\floor{\frac{T-2m+1}{\bar{d}}}+1)\bar{d})} +  \\
@@ -595,24 +702,22 @@ When $T=m-1+(k+1)(n-1)$ for some $k \in \mathbb{N}_{0}$ then the diametric bound
 
 \end{frame}
 
-\hypertarget{Correction to Line graph strategy}{}
-\begin{frame}{Correction of line graph strategy}
+
+\section[]{Correction to diametric line strategy}
+\hypertarget{Correction to line graph strategy}{}
+\begin{frame}{\insertsection}
 We propose a solution to the problem, by limiting the time
 
 \begin{definition}[Time limited diametric attack]
 When $T \geq m+n-2$ we have the \textit{time limited diametric attack} (on the line) strategy is for the attacker to attack at both ends of the line with equal probability for starting times $0,1,...,n-2$
 \end{definition}
 
-This restriction to the attacking time guarantees to get the upper bound of $V \leq \frac{m}{2(n-1)}$. 
-
-This works due to the spacing of the attack times.
+This restriction to the attacking time guarantees to get the upper bound of $V \leq \frac{m}{2(n-1)}$.
 \end{frame}
 
+\section[]{Extension to time limited diametric strategy}
 \hypertarget{Extension of correction strategy}{}
-\begin{frame}{Extension of correction strategy}
-
-
-Let $\bar{d}$ be the diameter of the graph, i.e the distance between the furthest apart nodes then using
+\begin{frame}{\insertsection}
 
 \begin{definition}[Time limited diametric attack]
 When $T \geq m-1+\bar{d}$ we have the \textit{time limited diametric attack} strategy is for the attacker to attack at both ends of the line with equal probability for starting times $\tau,\tau +1,...,\tau + \bar{d}-1$ (for a chosen initial $\tau$).
@@ -626,9 +731,9 @@ $$V \leq \dfrac{m}{2\bar{d}}.$$
 \end{frame}
 
 
-\begin{frame}{Extension of correction strategy}
-Using $d(i,j)$ as the distance between nodes $i$ and $j$ we can get a more general type of attack.
-
+\begin{frame}{\insertsection}
+\begin{columns}[onlytextwidth]
+   \column{\dimexpr\linewidth-40mm-5mm}
 \begin{definition}[Polygonal attack]
 A \textit{$d$-polygonal attack} is an attack at a set of nodes $D= \set{i \in N}{ d(i,j)=d , \forall j \in D}$ at the time intervals $\tau,\tau+1,...,\tau+d-1$ (for a chosen initial $\tau$) all equally probable.
 \end{definition}
@@ -637,10 +742,63 @@ A \textit{$d$-polygonal attack} is an attack at a set of nodes $D= \set{i \in N}
 When $T \geq m+d-1$ and a set $D$ as in the $d$-polygonal attack exists, the value has an upper bound of $V \leq \max \{ \frac{1}{|D|} , \frac{m}{|D|d} \}$ .
 \end{lemma}
 
+      \column{40mm}
+      \begin{minipage}{40mm}
+      \textbf{Example.}
+\begin{figure}
+\begin{center}
+\resizebox{\linewidth}{!}{
+\begin{tikzpicture}[-,auto,node distance=1.5cm,
+                    thick,main node/.style={circle,fill=white,draw,font=\sffamily\Large\bfseries}]
+
+  \node[main node] (1) {$1$};
+  \node[main node,fill=red!30] (2) [right of=1] {$2$};
+  \node[main node,fill=red!30] (3) [right of=2]  {$3$};
+  \node[main node] (4) [right of=3]  {$4$};
+  \node[main node,fill=red!30] (5) [below of=1]  {$5$};
+  \node[main node] (6) [below of=2]  {$6$};
+  \node[main node] (7) [below of=3]  {$7$};
+  \node[main node] (8) [below of=4]  {$8$};
+  \node[main node] (9) [below of=5]  {$9$};
+  \node[main node,fill=red!30] (10) [below of=6]  {$10$};
+  \node[main node,fill=red!30] (11) [below of=7] {$11$};
+  \node[main node] (12) [below of=8] {$12$}; 
+
+  \path[every node/.style={font=\sffamily}]
+    (1) edge (2)
+    (1) edge (5)
+    (1) edge (6)
+    (2) edge (6)
+    (2) edge (7)
+    (3) edge (7)
+    (3) edge (4)
+    (3) edge (8)
+    (4) edge (8)
+    (5) edge (9)
+    (6) edge (7)
+    (6) edge (10)
+    (6) edge (11)
+    (6) edge (9)
+    (7) edge (12)
+    (9) edge (10)
+    (11) edge (12)
+    ;
+\end{tikzpicture}}    
+\end{center}
+\caption{$2$-polygonal attack on $D=\{2,3,5,10,11  \}$ }
+\end{figure}
+Giving $V \leq \max\{\frac{1}{5},\frac{m}{10} \}$.
+      \end{minipage}
+
+
+    \end{columns}
+
+
 \end{frame}
 
+\section[]{Introduction to the elongated star}
 \hypertarget{Introduction to the elongated star}{}
-\begin{frame}{Introduction to the elongated star}
+\begin{frame}{\insertsection}
 
 
 We now wish to integrate features of a star into a line.
@@ -680,8 +838,151 @@ We will form the elongated star $S_{n}^{k}$. We will use the labelling as below
 
 \end{frame}
 
-\hypertarget{Future work}{}
-\begin{frame}{Future work}
+\begin{frame}{\insertsection}
+
+\begin{definition}[Random Oscillation]
+The \textit{Oscillation} on $S_{n}^{k}$ is any embedded Hamiltonian Patrol on $C_{2(n+k)}$.
+
+The \textit{Random Oscillation} on $S_{n}^{k}$ is the embedded Random Hamiltonian Patrol on $C_{2(n+k)}$.
+\end{definition}
+
+\begin{figure}
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}[baseline=(current bounding box.north),-,auto,node distance=1cm,
+                    thick,main node/.style={circle,draw,font=\sffamily\bfseries}]
+
+  \node[main node] (1) {$3$};
+  \node[main node] (2) [above right of=1] {$4$};
+  \node[main node] (3) [right of=2] {$5$};
+  \node[main node] (4) [right of=3] {$6$};
+  \node[main node] (5) [right of=4] {$7$};
+  \node[main node] (6) [below right of=5] {$8$};
+  \node[main node] (7) [below right of=1] {$2$};
+  \node[main node] (8) [right of=7] {$1$};
+  \node[main node] (9) [right of=8] {$10$};
+  \node[main node] (10) [right of=9] {$9$};
+  
+  \node (P1) [right of=6] {};
+  \node (P2) [right of=P1] {};
+  
+  \node[main node] (a) [right of=P2] {$1$};
+  \node[main node] (b) [right of=a] {$2$};
+  \node[main node] (c) [right of=b] {$3$};
+  \node[main node] (d) [right of=c] {$c$};
+  \node[main node] (e) [right of=d] {$*$};
+  \node[main node] (f) [above of=d] {$*$};
+  
+  \draw[->] (P1) edge (P2);
+  
+
+  \path[every node/.style={font=\sffamily}]
+    (1) edge  (2)
+    edge (7)
+    (2) edge (3)
+    (3) edge (4)
+    (4) edge (5)
+    (5) edge (6)
+    (6) edge (10)
+    (7) edge (8)
+    (8) edge (9)
+    (9) edge (10)
+    (a) edge (b)
+    (b) edge (c)
+    (c) edge (d)
+    (d) edge (e)
+    edge (f);
+    
+     \path[dashed,red,every node/.style={font=\sffamily}]
+    (2) edge  (7)
+    (3) edge (8);
+    
+    \path[dashed,blue,every node/.style={font=\sffamily}]
+    (4) edge  (9);
+    
+    \path[dashed,blue,out=-60,in=180,every node/.style={font=\sffamily}]
+    (4) edge (6);
+    
+    \path[dashed,blue,out=60,in=180,every node/.style={font=\sffamily}]
+    (9) edge (6);
+  
+  \node (Box1) [draw,thick,fit=(1) (2) (3) (7) (8),fill,red,opacity=0.2] {};
+  \node (Box2) [draw,thick,fit=(4) (5) (6)  (10),fill,blue,opacity=0.2] {};
+  
+  \node (Box3) [draw,thick,fit=(a) (b) (c),fill,red,opacity=0.2] {}; 
+  \node (Box4) [draw,thick,fit=(d) (e) (f),fill,blue,opacity=0.2] {};   
+  
+\node [left=0.5cm,above=0.5cm,text width=0.5cm] at (2) {$C_{10}$};
+\node [left=0.5cm,above=0.5cm,text width=0.5cm] at (a) {$S_{3}^{2}$};   
+\end{tikzpicture}
+}
+\end{center}
+\caption{$C_{10}$ can be simplified to $S_{3}^{2}$ by node identifying.}
+\end{figure}
+
 \end{frame}
+
+\begin{frame}{\insertsection}
+\begin{lemma}
+For $m < 2(n+k)$ following the Random Oscillation,
+$$V(S_{n}^{k}) \geq V(C_{2(n+k)})=\frac{m}{2(n+k)}$$
+and if $m \geq 2(n+k)$ then $V(S_{n}^{k})=1$, achieved by any Oscillation.
+\end{lemma}
+\end{frame}
+
+\begin{frame}{\insertsection}
+We adapt the time limited diametric attack to the time-delayed attack.
+
+\begin{definition}[Time-delayed attack]
+Let the \textit{time-delayed attack}, be the attack that attacks at the extended node labelled $1$ with probability $\frac{k+1}{n+k}$ and a particular normal node labelled $*$ with probability $\frac{1}{n+k}$.
+
+If node $1$ is chosen have the attack choose probability intervals with equal probability starting attacks at $\tau, \tau+1,...,\tau+2k+1$. If a $*$ node is chosen start the attacks at the times $\tau+k,\tau+k+1$ with equal probability.
+\end{definition}
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+ \draw[->] (-4,0) -- (4,0);
+ \node (timelabel) [shift={(0.2,0)}] at (4,0) {$t$};
+ 
+ 
+ \draw (-3.5,0.2) -- (-3.5,-0.2);
+ \draw (3.5,0.2) -- (3.5,-0.2);
+ 
+ \node (labelc1) at (-3.5,-0.5) {$\tau$};
+ \node (labelc2) at (3.5,-0.5) {$\tau+2k+1$};
+ 
+ \node[cross=5pt,red] (c1) at (-3.5,0.5) {};
+ \node[cross=5pt,red] (c2) at (3.5,0.5) {};
+ \draw[dashed] (c1) -- (c2);
+ 
+ \draw (-1,0.2) -- (-1,-0.2);
+ \draw (1,0.2) -- (1,-0.2);
+ 
+  \node (labelc3) at (-1,-0.5) {$\tau+k$};
+ \node (labelc4) at (1,-0.5) {$\tau+k+1$};
+ 
+ \node[cross=5pt,red] (c3) at (-1,1) {};
+ \node[cross=5pt,red] (c4) at (1,1) {};
+ \draw[dashed] (c3) -- (c4);
+
+\end{tikzpicture}
+\end{center}
+\end{figure}
+
+
+
+\end{frame}
+
+\section[]{Future Work}
+\hypertarget{Future work}{}
+\begin{frame}{\insertsection}
+
+\begin{itemize}
+\item Look at analysing different types of Polygonal attacks
+\end{itemize}
+
+\end{frame}
+
 
 \end{document}
