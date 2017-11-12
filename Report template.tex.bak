@@ -536,7 +536,7 @@ Note. The solution for $m=1$ is know for every graph as $V=\frac{1}{|N|}=\frac{1
       \begin{figure}
       \resizebox{\linewidth}{!}{
       \input{LineRegions(L_10).tex}}
-      \caption{Value of the line graph for varying $m$}
+      \caption{Value of the line graph, $L_{10}$}
       \end{figure}
       \end{minipage}
 
@@ -688,16 +688,20 @@ The problem is under the diametric attack, a patroller can catch
 \tiny
 
 
-\begin{align*}
-&m-\bar{d}+\pospart{m \times (\floor{\frac{T-2m+1}{\bar{d}}}+1)} +  \pospart{T-(m-1+(\floor{\frac{T-2m+1}{\bar{d}}}+1)\bar{d})} +  \\
+
+\begin{equation}
+\begin{split}
+&m-\bar{d}+\pospart{m \times (\floor{\frac{T-2m+1}{\bar{d}}}+1)} +  \pospart{T-(m-1+(\floor{\frac{T-2m+1}{\bar{d}}}+1)\bar{d})} + \\
 &\hspace{75pt} \pospart{T-(m-1+(\floor{\frac{T-2m+1}{\bar{d}}}+2)\bar{d})}
-\end{align*}
+\end{split}
+\end{equation}
+
 
 \normalsize
 attacks. From this we can get
 
 \begin{lemma}[Condition on $T$ for bound to hold]
-When $T=m-1+(k+1)(n-1)$ for some $k \in \mathbb{N}_{0}$ then the diametric bound holds. Otherwise as $T \rightarrow \infty$ then the diametric bound, $V \leq \frac{m}{2(n-1)}$, holds.
+When \textcolor{red}{$T=m-1+(k+1)(n-1)$} for some $k \in \mathbb{N}_{0}$ then the diametric bound holds. Otherwise as \textcolor{blue}{$T \rightarrow \infty$} then the diametric bound, $V \leq \frac{m}{2(n-1)}$, holds.
 \end{lemma}
 
 \end{frame}
@@ -923,11 +927,15 @@ The \textit{Random Oscillation} on $S_{n}^{k}$ is the embedded Random Hamiltonia
 \end{frame}
 
 \begin{frame}{\insertsection}
+
 \begin{lemma}
 For $m < 2(n+k)$ following the Random Oscillation,
 $$V(S_{n}^{k}) \geq V(C_{2(n+k)})=\frac{m}{2(n+k)}$$
 and if $m \geq 2(n+k)$ then $V(S_{n}^{k})=1$, achieved by any Oscillation.
 \end{lemma}
+
+This is again because the patroller can do no worse following the embedded path from $C_{2(n+k)}$ in $S_{n}^{k}$ 
+
 \end{frame}
 
 \begin{frame}{\insertsection}
@@ -942,19 +950,21 @@ If node $1$ is chosen have the attack choose probability intervals with equal pr
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
+ %Drawing Bottom Axis
  \draw[->] (-4,0) -- (4,0);
  \node (timelabel) [shift={(0.2,0)}] at (4,0) {$t$};
- 
- 
  \draw (-3.5,0.2) -- (-3.5,-0.2);
  \draw (3.5,0.2) -- (3.5,-0.2);
  
+ %Drawing Cross and lines 
  \node (labelc1) at (-3.5,-0.5) {$\tau$};
  \node (labelc2) at (3.5,-0.5) {$\tau+2k+1$};
  
  \node[cross=5pt,red] (c1) at (-3.5,0.5) {};
  \node[cross=5pt,red] (c2) at (3.5,0.5) {};
  \draw[dashed] (c1) -- (c2);
+ \node (linelabel1) at (-4.4,0.5) {Type $1$};
+ 
  
  \draw (-1,0.2) -- (-1,-0.2);
  \draw (1,0.2) -- (1,-0.2);
@@ -965,6 +975,7 @@ If node $1$ is chosen have the attack choose probability intervals with equal pr
  \node[cross=5pt,red] (c3) at (-1,1) {};
  \node[cross=5pt,red] (c4) at (1,1) {};
  \draw[dashed] (c3) -- (c4);
+ \node (linelabel1) at (-1.9,1) {Type $*$}; 
 
 \end{tikzpicture}
 \end{center}
@@ -974,12 +985,43 @@ If node $1$ is chosen have the attack choose probability intervals with equal pr
 
 \end{frame}
 
+\begin{frame}{\insertsection}
+
+\begin{lemma}
+When $T \geq m+2k$, the upper bound $V \leq \max \left\{ \frac{k+1}{n+k} , \frac{m}{2(n+k)}   \right\}$
+\end{lemma}
+
+Hence we have a partial solution, analogous to \textcolor{yellow}{region 1} and \textcolor{red}{region 2} for the line.
+
+\begin{theorem}
+If $T \geq m+2k$ and $ m \geq 2(k+1)$ then we have the value of the game is
+
+\begin{equation}
+V=\min \left\{1,\frac{m}{2(n+k)} \right\} 
+\end{equation}
+\end{theorem}
+
+\end{frame}
+
+\begin{frame}{\insertsection}
+
+\begin{figure}
+\resizebox{0.95\linewidth}{!}{
+\input{ElongatedStarRegions(S_10_5).tex}}
+\caption{Value of the Star Graph, $S_{10}^{5}$}
+\end{figure}
+
+
+\end{frame}
+
 \section[]{Future Work}
 \hypertarget{Future work}{}
 \begin{frame}{\insertsection}
 
 \begin{itemize}
-\item Look at analysing different types of Polygonal attacks
+\item Look at analysing different types of Polygonal attacks, i.e the best choice of $d$ and how to select the set $D$.
+\item Look at finding solutions analogous to region \textcolor{green}{3},\textcolor{purple}{4} and \textcolor{blue}{5} for the line, which may need to be split into more regions, for $(m,n,k)$ instead of $(n,m)$.
+\item Expand the idea to a more generalised star, $S_{n}^{k_{1},..,k_{h}}$, where elongation of more than one star node may occur.
 \end{itemize}
 
 \end{frame}

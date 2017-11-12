@@ -8,4 +8,4 @@
 \beamer@sectionintoc {8}{Correction to diametric line strategy}{27}{0}{8}
 \beamer@sectionintoc {9}{Extension to time limited diametric strategy}{28}{0}{9}
 \beamer@sectionintoc {10}{Introduction to the elongated star}{30}{0}{10}
-\beamer@sectionintoc {11}{Future Work}{34}{0}{11}
+\beamer@sectionintoc {11}{Future Work}{36}{0}{11}
