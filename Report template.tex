@@ -113,12 +113,12 @@ cross/.default={1pt}}
  \item Solved Graphs
   \begin{itemize}
   \item \hyperlink{Solved graphs: Hamiltonian graphs}{Hamiltonian graphs}
-  \item \hyperlink{Solved graphs: Complete bipartite graphs}{Complete bipartite graph}
-  \item \hyperlink{Solved graphs: Star graph}{Star graph}
+  %\item \hyperlink{Solved graphs: Complete bipartite graphs}{Complete bipartite graph}
+  %\item \hyperlink{Solved graphs: Star graph}{Star graph}
   \item \hyperlink{Solved graphs: Line graph}{Line graph}
   \end{itemize}   
  \end{itemize}
-\item \hyperlink{Problem with diametricstrategy}{Problem with line graph strategy}
+\item \hyperlink{Problem with diametric strategy}{Problem with line graph strategy}
 \item \hyperlink{Correction of diametric line graph strategy}{Correction of line graph strategy}
 \item \hyperlink{Extension of correction strategy}{Extension of correction strategy}
 %\item \hyperlink{Introduction to the elongated star}{Introduction to the elongated star}
@@ -286,48 +286,54 @@ P(\bm{\pi} ,\bm{\phi})=\sum\limits_{i=1}^{|\mathcal{W}|} \sum\limits_{j=1}^{|\ma
 \end{align*}
 
 By using the pure payoff as $1$ when capture occurs and $0$ otherwise, the \textcolor{purple}{mixed payoff is equivalent to the probability of capture}.
-\end{frame}
-
-\begin{frame}{Nash equilibria and optimal solutions}
-\begin{definition}[Mixed Nash equilibrium]
-A choice of $\bm{\pi}^*$ and $\bm{\phi}^*$ is said to be in \textit{Nash equilibrium} if 
-\begin{align*}
-P(\bm{\pi}^*,\bm{\phi}^*) \geq P(\bm{\pi},\bm{\phi}^*) \quad \forall \bm{\pi} \in \Pi , \\
-P(\bm{\pi}^*,\bm{\phi}^*) \geq P(\bm{\pi}^*,\bm{\phi}) \quad \forall \bm{\phi} \in \Phi .
-\end{align*}
-\end{definition}
 
 \pause
 
-\begin{definition}[Optimal solution]
-let $N$ be the set of all Nash equilibria then we say that $(\bm{\pi}^{*},\bm{\phi}^{*}) \in N$ is an \textit{optimal solution} if
-$$P(\bm{\pi}^{*},\bm{\phi}^{*}) \geq P(n) \quad \forall n \in N$$ 
-\end{definition}
-
-\textbf{Note.} It is possible that no optimal solution exists
-
-\pause
-
-Luckily in zero-sum games are guaranteed to to have at least one optimal solution and any nash-equilbrium is optimal.
-
+By standard game theory results, we define the value of the game to be
+\textcolor{purple}{$$V(G) \equiv \max\limits_{\bm{\pi} \in \Pi} \min\limits_{\bm{\phi} \in \Phi} P(\bm{\pi},\bm{\phi})=\min\limits_{\bm{\phi} \in \Phi} \max\limits_{\bm{\pi} \in \Pi} P(\bm{\pi},\bm{\phi})$$}
+and we will seek its value by getting upper and lower bounds.
 \end{frame}
 
-\begin{frame}{Game Value}
-
-\begin{theorem}[Minimax Theorem (John Neumann, 1928)]
-Let $X \subset \mathbb{R}^{n}$ and $Y \subset \mathbb{R}^{m}$ be compact convex sets and let $f: X \times Y \rightarrow \mathbb{R}$ be a continuous convex-concave function then
-$$\min\limits_{x \in X} \max\limits_{y \in Y} f(x,y) = \max\limits_{y \in Y} \min\limits_{x \in X} f(x,y) $$
-\end{theorem}
-
-\textbf{Note.} Convex-concave means convex for a fixed $y$ and concave for a fixed $x$.
-
-\pause
-Now $\Pi$ and $\Phi$ are both compact convex sets and as our game is zero-sum our payoff function $P(\bm{\pi},\bm{\phi})$ is convex-concave. Solving the minimax problem is equivalent to Nash-equilibrium and are hence optimal solutions.
-
-
-This gives rise to the game's value, as given by \textcolor{purple}{$$V(G) \equiv \max\limits_{\bm{\pi} \in \Pi} \min\limits_{\bm{\phi} \in \Phi} P(\bm{\pi},\bm{\phi})=\min\limits_{\bm{\phi} \in \Phi} \max\limits_{\bm{\pi} \in \Pi} P(\bm{\pi},\bm{\phi})$$}
-In the patrolling game this is found by getting upper and lower bounds on the value.
-\end{frame}
+%\begin{frame}{Nash equilibria and optimal solutions}
+%\begin{definition}[Mixed Nash equilibrium]
+%A choice of $\bm{\pi}^*$ and $\bm{\phi}^*$ is said to be in \textit{Nash equilibrium} if 
+%\begin{align*}
+%P(\bm{\pi}^*,\bm{\phi}^*) \geq P(\bm{\pi},\bm{\phi}^*) \quad \forall \bm{\pi} \in \Pi , \\
+%P(\bm{\pi}^*,\bm{\phi}^*) \geq P(\bm{\pi}^*,\bm{\phi}) \quad \forall \bm{\phi} \in \Phi .
+%\end{align*}
+%\end{definition}
+%
+%\pause
+%
+%\begin{definition}[Optimal solution]
+%let $N$ be the set of all Nash equilibria then we say that $(\bm{\pi}^{*},\bm{\phi}^{*}) \in N$ is an \textit{optimal solution} if
+%$$P(\bm{\pi}^{*},\bm{\phi}^{*}) \geq P(n) \quad \forall n \in N$$ 
+%\end{definition}
+%
+%\textbf{Note.} It is possible that no optimal solution exists
+%
+%\pause
+%
+%Luckily in zero-sum games are guaranteed to to have at least one optimal solution and any nash-equilbrium is optimal.
+%
+%\end{frame}
+%
+%\begin{frame}{Game Value}
+%
+%\begin{theorem}[Minimax Theorem (John Neumann, 1928)]
+%Let $X \subset \mathbb{R}^{n}$ and $Y \subset \mathbb{R}^{m}$ be compact convex sets and let $f: X \times Y \rightarrow \mathbb{R}$ be a continuous convex-concave function then
+%$$\min\limits_{x \in X} \max\limits_{y \in Y} f(x,y) = \max\limits_{y \in Y} \min\limits_{x \in X} f(x,y) $$
+%\end{theorem}
+%
+%\textbf{Note.} Convex-concave means convex for a fixed $y$ and concave for a fixed $x$.
+%
+%\pause
+%Now $\Pi$ and $\Phi$ are both compact convex sets and as our game is zero-sum our payoff function $P(\bm{\pi},\bm{\phi})$ is convex-concave. Solving the minimax problem is equivalent to Nash-equilibrium and are hence optimal solutions.
+%
+%
+%This gives rise to the game's value, as given by \textcolor{purple}{$$V(G) \equiv \max\limits_{\bm{\pi} \in \Pi} \min\limits_{\bm{\phi} \in \Phi} P(\bm{\pi},\bm{\phi})=\min\limits_{\bm{\phi} \in \Phi} \max\limits_{\bm{\pi} \in \Pi} P(\bm{\pi},\bm{\phi})$$}
+%In the patrolling game this is found by getting upper and lower bounds on the value.
+%\end{frame}
 
 \section[]{Solved graphs: Hamiltonian graphs}
 \hypertarget{Solved graphs: Hamiltonian graphs}{}
@@ -414,109 +420,109 @@ Two common Hamiltonian graphs are the Cyclic graph (of n nodes $C_{n}$) and the 
 
 \end{frame}
 
-\section[]{Solved graphs: Complete bipartite graphs}
-\hypertarget{Solved graphs: Complete bipartite graphs}{}
-\begin{frame}{\insertsection}
-
-A bipartite graph is a graph made of two non-adjacent sets, the complete version has all connections.
-
-\begin{block}{Complete bipartite graph}
-A complete bipartite graph, $K_{a,b}$ has the value
-$V=\frac{m}{2 \max (a,b)}$
-\end{block}
-
-\begin{center}
-\begin{figure}
-\begin{tabular}{c}
-\begin{tikzpicture}[baseline=(current bounding box.north),-,auto,node distance=1cm,
-                    main node/.style={circle,draw,fill=black,font=\sffamily\bfseries}]
-
-  \node[main node] (1) {};
-  \node[main node] (2) [below of=1] {};
-  \node[main node] (3) [below of=2] {};
-  \node[main node] (4) [right of=1] {};
-  \node[main node] (5) [below of=4] {};
-
-  
-
-  \path[every node/.style={font=\sffamily}]
-  (1) edge (4)
-      edge (5)
-  (2) edge (4)
-      edge (5)    
-  (3) edge (4)
-      edge (5);
-
-   
-\end{tikzpicture}
-\\ \small $K_{3,2}$
-\end{tabular}
-\caption{Example of a complete bipartite graph}
-\end{figure}
-
-\end{center}
-
-\end{frame}
-
-\section[]{Solved graphs: Star graph}
-\hypertarget{Solved graphs: Star graph}{}
-\begin{frame}{\insertsection}
-
-The star graph, $S_{n}$, is $n$ nodes adjacent only to the centre. 
-
-\begin{block}{Star graph}
-The star $S_{n} \equiv K_{1,n}$ so has the value $V=\frac{m}{2n}$
-\end{block}
-
-\begin{center}
-\begin{figure}
-\begin{tabular}{c}
-\begin{tikzpicture}[baseline=(current bounding box.north),-,auto,node distance=1cm,
-                    main node/.style={circle,draw,fill=black,font=\sffamily\bfseries}]
-
-  \node[main node] (1) {};
-  \node[main node] (2) [above of=1] {};
-  \node[main node] (3) [right of=1] {};
-  \node[main node] (4) [below of=1] {};
-  \node[main node] (5) [left of=1] {};
-
-  
-
-  \path[every node/.style={font=\sffamily}]
-  (1) edge (2)
-      edge (3)
-      edge (4)
-      edge (5);
-
-   
-\end{tikzpicture}
-\\ \small $S_{4}$
-\end{tabular}
-\caption{Example of a star graph}
-\end{figure}
-
-\end{center}
-
-\end{frame}
-
-\section[]{Solved graphs: Line graph}
-\hypertarget{Solved graphs: Line graph}{}
-\begin{frame}{\insertsection}
-
-The line graph, $L_{n}$, made of $n$ nodes each adjacent to two other nodes (apart from the ends)
-
-\begin{block}{Line graph}
-The line graph, $L_{n}$ has a value dependent on $(n,m)$
-\begin{enumerate}
-\item If $m > 2(n-1)$ then $V=1$.
-\item If $n-1 < m \leq 2(n-1)$ then $V=\frac{m}{2(n-1)}$
-\item If $m=2 , n\geq 3$ then $V=\frac{1}{\ceil{\frac{n}{2}}}$
-\item If $m=n-1 \text{ or } m=n-2  \text{ and } m=2k \text{ for some } k \geq 2 $ then $V=\frac{1}{2}$
-\item If $3 \leq m \leq n-3$ or  $m=n-2$ and $m=2k+1$ for some  $k \geq 1$ then $V=\frac{m}{m+n-1}$
-\end{enumerate}
-\end{block}
-\textbf{Note.} The solution for $m=1$ is known for every graph as $V=\frac{1}{|N|}=\frac{1}{n}$, and on a line graph if $m=n=2$ then we know $V=1$.
-\end{frame}
+%\section[]{Solved graphs: Complete bipartite graphs}
+%\hypertarget{Solved graphs: Complete bipartite graphs}{}
+%\begin{frame}{\insertsection}
+%
+%A bipartite graph is a graph made of two non-adjacent sets, the complete version has all connections.
+%
+%\begin{block}{Complete bipartite graph}
+%A complete bipartite graph, $K_{a,b}$ has the value
+%$V=\frac{m}{2 \max (a,b)}$
+%\end{block}
+%
+%\begin{center}
+%\begin{figure}
+%\begin{tabular}{c}
+%\begin{tikzpicture}[baseline=(current bounding box.north),-,auto,node distance=1cm,
+%                    main node/.style={circle,draw,fill=black,font=\sffamily\bfseries}]
+%
+%  \node[main node] (1) {};
+%  \node[main node] (2) [below of=1] {};
+%  \node[main node] (3) [below of=2] {};
+%  \node[main node] (4) [right of=1] {};
+%  \node[main node] (5) [below of=4] {};
+%
+%  
+%
+%  \path[every node/.style={font=\sffamily}]
+%  (1) edge (4)
+%      edge (5)
+%  (2) edge (4)
+%      edge (5)    
+%  (3) edge (4)
+%      edge (5);
+%
+%   
+%\end{tikzpicture}
+%\\ \small $K_{3,2}$
+%\end{tabular}
+%\caption{Example of a complete bipartite graph}
+%\end{figure}
+%
+%\end{center}
+%
+%\end{frame}
+%
+%\section[]{Solved graphs: Star graph}
+%\hypertarget{Solved graphs: Star graph}{}
+%\begin{frame}{\insertsection}
+%
+%The star graph, $S_{n}$, is $n$ nodes adjacent only to the centre. 
+%
+%\begin{block}{Star graph}
+%The star $S_{n} \equiv K_{1,n}$ so has the value $V=\frac{m}{2n}$
+%\end{block}
+%
+%\begin{center}
+%\begin{figure}
+%\begin{tabular}{c}
+%\begin{tikzpicture}[baseline=(current bounding box.north),-,auto,node distance=1cm,
+%                    main node/.style={circle,draw,fill=black,font=\sffamily\bfseries}]
+%
+%  \node[main node] (1) {};
+%  \node[main node] (2) [above of=1] {};
+%  \node[main node] (3) [right of=1] {};
+%  \node[main node] (4) [below of=1] {};
+%  \node[main node] (5) [left of=1] {};
+%
+%  
+%
+%  \path[every node/.style={font=\sffamily}]
+%  (1) edge (2)
+%      edge (3)
+%      edge (4)
+%      edge (5);
+%
+%   
+%\end{tikzpicture}
+%\\ \small $S_{4}$
+%\end{tabular}
+%\caption{Example of a star graph}
+%\end{figure}
+%
+%\end{center}
+%
+%\end{frame}
+%
+%\section[]{Solved graphs: Line graph}
+%\hypertarget{Solved graphs: Line graph}{}
+%\begin{frame}{\insertsection}
+%
+%The line graph, $L_{n}$, made of $n$ nodes each adjacent to two other nodes (apart from the ends)
+%
+%\begin{block}{Line graph}
+%The line graph, $L_{n}$ has a value dependent on $(n,m)$
+%\begin{enumerate}
+%\item If $m > 2(n-1)$ then $V=1$.
+%\item If $n-1 < m \leq 2(n-1)$ then $V=\frac{m}{2(n-1)}$
+%\item If $m=2 , n\geq 3$ then $V=\frac{1}{\ceil{\frac{n}{2}}}$
+%\item If $m=n-1 \text{ or } m=n-2  \text{ and } m=2k \text{ for some } k \geq 2 $ then $V=\frac{1}{2}$
+%\item If $3 \leq m \leq n-3$ or  $m=n-2$ and $m=2k+1$ for some  $k \geq 1$ then $V=\frac{m}{m+n-1}$
+%\end{enumerate}
+%\end{block}
+%\textbf{Note.} The solution for $m=1$ is known for every graph as $V=\frac{1}{|N|}=\frac{1}{n}$, and on a line graph if $m=n=2$ then we know $V=1$.
+%\end{frame}
 
 \begin{frame}{Line graph example}
 
@@ -1051,6 +1057,48 @@ Giving $V \leq \max\{\frac{1}{5},\frac{m}{10} \}$.
 \item Alter the problem to have `semi-random' attackers arriving on predetermined sections of the graph.
 \end{itemize}
 
+\end{frame}
+
+
+
+\begin{frame}[plain,noframenumbering]{Nash equilibria and optimal solutions}
+\begin{definition}[Mixed Nash equilibrium]
+A choice of $\bm{\pi}^*$ and $\bm{\phi}^*$ is said to be in \textit{Nash equilibrium} if 
+\begin{align*}
+P(\bm{\pi}^*,\bm{\phi}^*) \geq P(\bm{\pi},\bm{\phi}^*) \quad \forall \bm{\pi} \in \Pi , \\
+P(\bm{\pi}^*,\bm{\phi}^*) \geq P(\bm{\pi}^*,\bm{\phi}) \quad \forall \bm{\phi} \in \Phi .
+\end{align*}
+\end{definition}
+
+\pause
+
+\begin{definition}[Optimal solution]
+let $N$ be the set of all Nash equilibria then we say that $(\bm{\pi}^{*},\bm{\phi}^{*}) \in N$ is an \textit{optimal solution} if
+$$P(\bm{\pi}^{*},\bm{\phi}^{*}) \geq P(n) \quad \forall n \in N$$ 
+\end{definition}
+
+\textbf{Note.} It is possible that no optimal solution exists
+
+\pause
+
+Luckily in zero-sum games are guaranteed to to have at least one optimal solution and any nash-equilbrium is optimal.
+
+\end{frame}
+
+\begin{frame}[plain,noframenumbering]{Game Value}
+
+\begin{theorem}[Minimax Theorem (John Neumann, 1928)]
+Let $X \subset \mathbb{R}^{n}$ and $Y \subset \mathbb{R}^{m}$ be compact convex sets and let $f: X \times Y \rightarrow \mathbb{R}$ be a continuous convex-concave function then
+$$\min\limits_{x \in X} \max\limits_{y \in Y} f(x,y) = \max\limits_{y \in Y} \min\limits_{x \in X} f(x,y) $$
+\end{theorem}
+
+\textbf{Note.} Convex-concave means convex for a fixed $y$ and concave for a fixed $x$.
+
+\pause
+Now $\Pi$ and $\Phi$ are both compact convex sets and as our game is zero-sum our payoff function $P(\bm{\pi},\bm{\phi})$ is convex-concave. Solving the minimax problem is equivalent to Nash-equilibrium and are hence optimal solutions.
+
+
+This gives rise to the game's value, as given by \textcolor{purple}{$$V(G) \equiv \max\limits_{\bm{\pi} \in \Pi} \min\limits_{\bm{\phi} \in \Phi} P(\bm{\pi},\bm{\phi})=\min\limits_{\bm{\phi} \in \Phi} \max\limits_{\bm{\pi} \in \Pi} P(\bm{\pi},\bm{\phi})$$}
 \end{frame}
 
 

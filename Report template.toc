@@ -1,10 +1,7 @@
 \beamer@sectionintoc {1}{Pure game}{3}{0}{1}
 \beamer@sectionintoc {2}{Introduction to game: Mixed game}{14}{0}{2}
-\beamer@sectionintoc {3}{Solved graphs: Hamiltonian graphs}{21}{0}{3}
-\beamer@sectionintoc {4}{Solved graphs: Complete bipartite graphs}{22}{0}{4}
-\beamer@sectionintoc {5}{Solved graphs: Star graph}{23}{0}{5}
-\beamer@sectionintoc {6}{Solved graphs: Line graph}{24}{0}{6}
-\beamer@sectionintoc {7}{Problem with the diametric strategy}{29}{0}{7}
-\beamer@sectionintoc {8}{Correction to diametric line strategy}{32}{0}{8}
-\beamer@sectionintoc {9}{Extension to time-limited diametric strategy}{33}{0}{9}
-\beamer@sectionintoc {10}{Future Work}{35}{0}{10}
+\beamer@sectionintoc {3}{Solved graphs: Hamiltonian graphs}{17}{0}{3}
+\beamer@sectionintoc {4}{Problem with the diametric strategy}{22}{0}{4}
+\beamer@sectionintoc {5}{Correction to diametric line strategy}{25}{0}{5}
+\beamer@sectionintoc {6}{Extension to time-limited diametric strategy}{26}{0}{6}
+\beamer@sectionintoc {7}{Future Work}{28}{0}{7}
