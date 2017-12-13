@@ -268,7 +268,7 @@ The game played on $Q$ as below with $m=3$ and $T=7$
 }
 \only<8>
 {
-The attacker fails to catch the patroller, therefore the patroller loses (and the attacker wins) meaning a payoff of $0$ for the patroller (and $-1$ for the attacker).
+The attacker fails to catch the patroller, therefore the patroller loses (and the attacker wins) meaning a payoff of $0$ for the patroller (and $0$ for the attacker).
 }
 \end{frame}
 
@@ -591,7 +591,7 @@ Two common Hamiltonian graphs are the Cyclic graph (of n nodes $C_{n}$) and the 
 \end{frame}
 
 \begin{frame}{Strategies used in the second region}
-Focusing in on \textcolor{red}{$n-1 < m \leq 2(n-1)$}. We will look at the strategies used to get the bounds $V \leq \frac{m}{2(n-1)}$ and $V \geq \frac{m}{2(n-1)}$.
+Focusing in on \textcolor{red}{$n-1 < m \leq 2(n-1)$} , it is proposed that the value of the game is $V=\frac{m}{2(n-1)}$. We will look at the strategies used to get the bounds $V \leq \frac{m}{2(n-1)}$ and $V \geq \frac{m}{2(n-1)}$.
 
 \begin{itemize}
 \item Patroller Strategy, $\bm{\pi}_{H}$, the embedded random Hamiltonian patrol.
@@ -751,6 +751,15 @@ When $T \geq m+n-2$ the \textit{time limited diametric attack} (on the line) str
 This restriction on the attacking time guarantees to get the upper bound of \textcolor{red}{$V \leq \frac{m}{2(n-1)}$}.
 \end{frame}
 
+\begin{frame}{Time limited diametric attack}
+\begin{figure}
+%\includegraphics[scale=0.4]{DiametricAttack(m_45,d_30)1.png}
+\resizebox{0.95\linewidth}{!}{
+\input{TimeLimitedDiametricAttack(m_45,d_30).tex}}
+\caption{New Upper Bound achievable under the time limited diametric strategy}
+\end{figure}
+\end{frame}
+
 \section[]{Extension to time-limited diametric strategy}
 \hypertarget{Extension of correction strategy}{}
 \begin{frame}{\insertsection}
@@ -771,11 +780,11 @@ $$V \leq \dfrac{m}{2\bar{d}}.$$
 \begin{columns}[onlytextwidth]
    \column{\dimexpr\linewidth-40mm-5mm}
 \begin{definition}[Polygonal attack]
-A \textit{$d$-polygonal attack} is an attack at a set of nodes \textcolor{red}{$D= \set{i \in N}{ d(i,j)=d , \forall j \in D}$} at the starting times \textcolor{red}{$\tau,\tau+1,...,\tau+d-1$} (for a chosen initial $\tau \leq T+1-d-m$) all equally probably.
+A \textit{$d$-polygonal attack} is an attack at a set of nodes \textcolor{red}{$D$} defined by \textcolor{red}{$d(i,j)=d \quad \forall i,j \in D$} attacked at the starting times \textcolor{red}{$\tau,\tau+1,...,\tau+d-1$} (for a chosen initial $\tau \leq T+1-d-m$) all equally probably.
 \end{definition}
 
 \begin{lemma}[Polygonal bound]
-When $T \geq m+d-1$ and a set $D$ (as in the $d$-polygonal attack) exists, the value has an upper bound of \textcolor{red}{$V \leq \max \{ \frac{1}{|D|} , \frac{m}{|D|d} \}$} .
+When $T \geq m+d-1$ and a polygonal attack exists, the value has an upper bound of \textcolor{red}{$V \leq \max \{ \frac{1}{|D|} , \frac{m}{|D|d} \}$} .
 \end{lemma}
 
       \column{40mm}
@@ -821,7 +830,7 @@ When $T \geq m+d-1$ and a set $D$ (as in the $d$-polygonal attack) exists, the v
     ;
 \end{tikzpicture}}    
 \end{center}
-\caption{$2$-polygonal attack on $D=\{2,3,5,10,11  \}$ }
+\caption{A $2$-polygonal attack on $D=\{2,3,5,10,11  \}$ }
 \end{figure}
 Giving $V \leq \max\{\frac{1}{5},\frac{m}{10} \}$.
       \end{minipage}
@@ -1054,8 +1063,39 @@ Giving $V \leq \max\{\frac{1}{5},\frac{m}{10} \}$.
 \begin{itemize}
 \item Look at analysing different types of Polygonal attacks, i.e the best choice of $d$ and how to select the set $D$.
 \item Look at analysing the elongated star graph, that is the star graph with one of the end points further away from the centre.
-\item Alter the problem to have `semi-random' attackers arriving on predetermined sections of the graph.
 \end{itemize}
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[-,auto,node distance=1.5cm,
+                    thick,main node/.style={circle,draw,font=\sffamily\Large\bfseries}]
+
+  \node[main node] (1) {$1$};
+  \node[main node] (2) [right of=1] {$2$};
+  \node[main node] (3) [right of=2] {$3$};
+  \node[main node] (4) [right of=3] {$4$};
+  \node[main node] (5) [right of=4] {$5$};
+  \node[main node] (6) [right of=5]  {$6$};
+  \node[main node] (7) [right of=6]  {$c$};
+  \node[main node] (8) [right of=7]  {$*$};
+  \node[main node] (9) [above of=7]  {$*$};
+  \node[main node] (10) [below of=7]  {$*$};
+  
+
+  \path[every node/.style={font=\sffamily}]
+    (1) edge  (2)
+    (2) edge (3)
+    (3) edge (4)
+    (4) edge (5)
+    (5) edge (6)
+    (6) edge (7)
+    (7) edge (8)
+     edge (9)
+     edge (10);
+\end{tikzpicture}
+\end{center}
+\caption{$S_{4}^5$.}
+\end{figure}
 
 \end{frame}
 

@@ -3,5 +3,5 @@
 \beamer@sectionintoc {3}{Solved graphs: Hamiltonian graphs}{17}{0}{3}
 \beamer@sectionintoc {4}{Problem with the diametric strategy}{22}{0}{4}
 \beamer@sectionintoc {5}{Correction to diametric line strategy}{25}{0}{5}
-\beamer@sectionintoc {6}{Extension to time-limited diametric strategy}{26}{0}{6}
-\beamer@sectionintoc {7}{Future Work}{28}{0}{7}
+\beamer@sectionintoc {6}{Extension to time-limited diametric strategy}{27}{0}{6}
+\beamer@sectionintoc {7}{Future Work}{29}{0}{7}
